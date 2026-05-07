@@ -1195,6 +1195,168 @@
   }
 
   /* ─── RESPONSIVE ─────────────────────────────────── */
+  /* ─── WEARABLE CARDS GRID ────────────────────────── */
+  .wearable-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 64px;
+    border-radius: 24px;
+    overflow: hidden;
+  }
+
+  .wearable-card {
+    background: var(--dark-2);
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .wearable-card-accent { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--grad); }
+
+  .wearable-card-icon { font-size: 40px; }
+
+  .wearable-card-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 26px;
+    text-transform: uppercase;
+    letter-spacing: -0.3px;
+    line-height: 1.1;
+  }
+
+  .wearable-card-desc {
+    font-size: 14px;
+    color: var(--white-60);
+    line-height: 1.7;
+    flex: 1;
+  }
+
+  .wearable-badge-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,191,0,0.1);
+    border: 1px solid rgba(255,191,0,0.25);
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--brand-gold);
+    width: fit-content;
+  }
+
+  .wearable-badge-grey {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    width: fit-content;
+  }
+
+  /* ─── RING BONUS CALLOUT ─────────────────────────── */
+  .ring-bonus-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+    margin-top: 32px;
+    background: linear-gradient(135deg, #0f0a00, #1a0e00);
+    border: 1px solid rgba(255,191,0,0.2);
+    border-radius: 24px;
+    padding: 48px;
+  }
+
+  .ring-bonus-steps {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 20px 24px;
+  }
+
+  .ring-bonus-steps-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 12px;
+  }
+
+  .ring-bonus-step-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--white-60);
+    margin-bottom: 10px;
+  }
+
+  .ring-bonus-step-row:last-child { margin-bottom: 0; }
+
+  .ring-step-num {
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: var(--grad);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .ring-bonus-note {
+    background: rgba(255,191,0,0.06);
+    border: 1px solid rgba(255,191,0,0.15);
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+    margin-top: 16px;
+  }
+
+  /* ─── SUPPORT INFO GRID ──────────────────────────── */
+  .support-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+    margin-top: 48px;
+    padding: 40px;
+    background: var(--dark-3);
+    border-radius: 20px;
+    border: 1px solid var(--white-08);
+  }
+
+  .support-info-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: -0.3px;
+    margin-bottom: 12px;
+  }
+
+  .support-info-body {
+    font-size: 15px;
+    color: var(--white-60);
+    line-height: 1.6;
+  }
+
+  /* ─── RESPONSIVE ─────────────────────────────────── */
   @media (max-width: 768px) {
     nav { padding: 16px 20px; }
     .nav-links { display: none; }
@@ -1222,6 +1384,39 @@
     .legal-page-header { padding: 16px 20px; }
     .legal-page-content { padding: 40px 20px 80px; }
     .legal-page-content h1 { font-size: 38px; }
+
+    /* Wearable cards — single column on mobile */
+    .wearable-cards-grid {
+      grid-template-columns: 1fr;
+      border-radius: 16px;
+    }
+    .wearable-card { padding: 32px 24px; }
+    .wearable-card:first-child { border-radius: 16px 16px 0 0; }
+    .wearable-card:last-child  { border-radius: 0 0 16px 16px; }
+
+    /* Ring bonus — stack on mobile */
+    .ring-bonus-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      padding: 32px 24px;
+      border-radius: 16px;
+    }
+
+    /* Support info — stack on mobile */
+    .support-info-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      padding: 28px 24px;
+    }
+    .support-info-title { font-size: 22px; }
+  }
+
+  /* Tablet — 2 cols for wearable cards */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .wearable-cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .ring-bonus-grid { padding: 36px; gap: 32px; }
   }
 
   /* ─── MISC ───────────────────────────────────────── */
@@ -1528,48 +1723,47 @@
       <p class="section-subtitle">Activate Fitness works with the wearable your child already has. Steps sync automatically through Apple Health — no extra setup.</p>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 64px; border-radius: 24px; overflow: hidden;" class="animate-on-scroll">
+    <div class="wearable-cards-grid animate-on-scroll">
 
-      <div style="background: var(--dark-2); padding: 40px 32px; display: flex; flex-direction: column; gap: 16px; position: relative; overflow: hidden;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--grad);"></div>
-        <div style="font-size: 40px;">⌚</div>
-        <h3 style="font-family: var(--font-display); font-weight: 900; font-size: 26px; text-transform: uppercase; letter-spacing: -0.3px; line-height: 1.1;">Apple Watch</h3>
-        <p style="font-size: 14px; color: var(--white-60); line-height: 1.7;">Steps sync automatically through Apple Health. Apple Watch users also unlock the exclusive <strong style="color: var(--brand-gold);">Ring Bonus</strong> — close the Exercise ring and earn extra screen time, once per day.</p>
-        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,191,0,0.1); border: 1px solid rgba(255,191,0,0.25); border-radius: 100px; padding: 6px 14px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--brand-gold); width: fit-content;">⭐ Ring Bonus Available</div>
+      <div class="wearable-card">
+        <div class="wearable-card-accent"></div>
+        <div class="wearable-card-icon">⌚</div>
+        <h3 class="wearable-card-title">Apple Watch</h3>
+        <p class="wearable-card-desc">Steps sync automatically through Apple Health. Apple Watch users also unlock the exclusive <strong style="color: var(--brand-gold);">Ring Bonus</strong> — close the Exercise ring and earn extra screen time, once per day.</p>
+        <div class="wearable-badge-gold">⭐ Ring Bonus Available</div>
       </div>
 
-      <div style="background: var(--dark-2); padding: 40px 32px; display: flex; flex-direction: column; gap: 16px;">
-        <div style="font-size: 40px;">🏃</div>
-        <h3 style="font-family: var(--font-display); font-weight: 900; font-size: 26px; text-transform: uppercase; letter-spacing: -0.3px; line-height: 1.1;">Garmin, Whoop & Oura</h3>
-        <p style="font-size: 14px; color: var(--white-60); line-height: 1.7;">These wearables sync steps and activity automatically to Apple Health. Once enabled in their companion app, Activate Fitness reads the data instantly — nothing extra for parents to configure.</p>
-        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 100px; padding: 6px 14px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.5); width: fit-content;">✓ Auto-syncs via Apple Health</div>
+      <div class="wearable-card">
+        <div class="wearable-card-icon">🏃</div>
+        <h3 class="wearable-card-title">Garmin, Whoop & Oura</h3>
+        <p class="wearable-card-desc">These wearables sync steps and activity automatically to Apple Health. Once enabled in their companion app, Activate Fitness reads the data instantly — nothing extra for parents to configure.</p>
+        <div class="wearable-badge-grey">✓ Auto-syncs via Apple Health</div>
       </div>
 
-      <div style="background: var(--dark-2); padding: 40px 32px; display: flex; flex-direction: column; gap: 16px;">
-        <div style="font-size: 40px;">📲</div>
-        <h3 style="font-family: var(--font-display); font-weight: 900; font-size: 26px; text-transform: uppercase; letter-spacing: -0.3px; line-height: 1.1;">Fitbit & Others</h3>
-        <p style="font-size: 14px; color: var(--white-60); line-height: 1.7;">Fitbit doesn't sync to Apple Health natively, but works via the free <strong style="color: white;">Health Sync</strong> bridge app. Once set up, steps flow into Activate Fitness the same as any other wearable. Other wearables work the same way.</p>
-        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 100px; padding: 6px 14px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.5); width: fit-content;">✓ Works via Health Sync bridge</div>
+      <div class="wearable-card">
+        <div class="wearable-card-icon">📲</div>
+        <h3 class="wearable-card-title">Fitbit & Others</h3>
+        <p class="wearable-card-desc">Fitbit doesn't sync to Apple Health natively, but works via the free <strong style="color: white;">Health Sync</strong> bridge app. Once set up, steps flow into Activate Fitness the same as any other wearable. Other wearables work the same way.</p>
+        <div class="wearable-badge-grey">✓ Works via Health Sync bridge</div>
       </div>
+
     </div>
 
     <!-- Ring Bonus callout -->
-    <div class="animate-on-scroll" style="margin-top: 32px; background: linear-gradient(135deg, #0f0a00, #1a0e00); border: 1px solid rgba(255,191,0,0.2); border-radius: 24px; padding: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
+    <div class="ring-bonus-grid animate-on-scroll">
       <div>
-        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,191,0,0.1); border: 1px solid rgba(255,191,0,0.25); border-radius: 100px; padding: 6px 16px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--brand-gold); margin-bottom: 20px;">Apple Watch Exclusive</div>
+        <div class="wearable-badge-gold" style="margin-bottom: 20px;">Apple Watch Exclusive</div>
         <h3 style="font-family: var(--font-display); font-weight: 900; font-size: clamp(32px, 4vw, 48px); text-transform: uppercase; letter-spacing: -0.5px; line-height: 1; margin-bottom: 16px; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Apple Watch Ring Bonus</h3>
-        <p style="font-size: 16px; color: var(--white-60); line-height: 1.7; margin-bottom: 0;">When your child closes their Apple Watch <strong style="color: white;">Exercise ring</strong> — 30 minutes of activity — they earn a one-time daily bonus on top of their regular step rewards. Parents set how many minutes the bonus is worth. It stacks with normal step goal earnings so active kids are rewarded even more.</p>
+        <p style="font-size: 16px; color: var(--white-60); line-height: 1.7;">When your child closes their Apple Watch <strong style="color: white;">Exercise ring</strong> — 30 minutes of activity — they earn a one-time daily bonus on top of their regular step rewards. Parents set how many minutes the bonus is worth. It stacks with normal step goal earnings so active kids are rewarded even more.</p>
       </div>
-      <div style="display: flex; flex-direction: column; gap: 16px;">
-        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 20px 24px;">
-          <div style="font-family: var(--font-display); font-weight: 800; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 8px;">How It Works</div>
-          <div style="display: flex; flex-direction: column; gap: 10px;">
-            <div style="display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--white-60);"><span style="width: 24px; height: 24px; border-radius: 50%; background: var(--grad); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0;">1</span> Child closes Apple Watch Exercise ring</div>
-            <div style="display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--white-60);"><span style="width: 24px; height: 24px; border-radius: 50%; background: var(--grad); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0;">2</span> Activate Fitness detects ring closure via HealthKit</div>
-            <div style="display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--white-60);"><span style="width: 24px; height: 24px; border-radius: 50%; background: var(--grad); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0;">3</span> Bonus minutes added to their balance — once per day</div>
-          </div>
+      <div>
+        <div class="ring-bonus-steps">
+          <div class="ring-bonus-steps-title">How It Works</div>
+          <div class="ring-bonus-step-row"><span class="ring-step-num">1</span> Child closes Apple Watch Exercise ring</div>
+          <div class="ring-bonus-step-row"><span class="ring-step-num">2</span> Activate Fitness detects ring closure via HealthKit</div>
+          <div class="ring-bonus-step-row"><span class="ring-step-num">3</span> Bonus minutes added to their balance — once per day</div>
         </div>
-        <div style="background: rgba(255,191,0,0.06); border: 1px solid rgba(255,191,0,0.15); border-radius: 12px; padding: 16px 20px; font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6;">
+        <div class="ring-bonus-note">
           <strong style="color: var(--brand-gold);">Parent configures:</strong> Choose 5, 10, 15, or 20 bonus minutes per ring closure. Works alongside the regular step goal — kids can earn both on the same day.
         </div>
       </div>
@@ -1829,16 +2023,14 @@
       </div>
     </div>
 
-    <div class="animate-on-scroll" style="margin-top:48px; padding:40px; background:var(--dark-3); border-radius:20px; border:1px solid var(--white-08);">
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;">
-        <div>
-          <h3 style="font-family:var(--font-display); font-weight:800; font-size:28px; text-transform:uppercase; letter-spacing:-0.3px; margin-bottom:12px;">Response Time</h3>
-          <p style="font-size:15px; color:var(--white-60); line-height:1.6;">We aim to respond to all support emails within <strong style="color:white;">48 hours</strong> on business days. Data deletion requests are processed within <strong style="color:white;">30 days</strong> per our Privacy Policy.</p>
-        </div>
-        <div>
-          <h3 style="font-family:var(--font-display); font-weight:800; font-size:28px; text-transform:uppercase; letter-spacing:-0.3px; margin-bottom:12px;">Business Info</h3>
-          <p style="font-size:15px; color:var(--white-60); line-height:1.6;">Activate Fitness is an independent iOS app developed by Andrew Armour. For legal correspondence, please contact us at the email above.</p>
-        </div>
+    <div class="support-info-grid animate-on-scroll">
+      <div>
+        <h3 class="support-info-title">Response Time</h3>
+        <p class="support-info-body">We aim to respond to all support emails within <strong style="color:white;">48 hours</strong> on business days. Data deletion requests are processed within <strong style="color:white;">30 days</strong> per our Privacy Policy.</p>
+      </div>
+      <div>
+        <h3 class="support-info-title">Business Info</h3>
+        <p class="support-info-body">Activate Fitness is an independent iOS app developed by Andrew Armour. For legal correspondence, please contact us at the email above.</p>
       </div>
     </div>
   </div>

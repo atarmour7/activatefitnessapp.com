@@ -1891,6 +1891,21 @@
         <div class="faq-q">Does Activate Fitness sell data or show ads?</div>
         <div class="faq-a">Absolutely not. We do not sell any data, run ads, or use behavioral tracking of any kind — especially for children's data. Activate Fitness is funded entirely by the App Store and optional future premium features. Read our <a href="#" onclick="openLegal('privacy')">Privacy Policy</a> for full details.</div>
       </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How do I add the Home Screen widget?</div>
+        <div class="faq-a">Long press on your Home Screen until the apps start wiggling, tap the "+" button in the top left corner, search for "Activate Fitness", and choose the Medium size. This widget shows your Screen Time balance and step progress at a glance — no need to open the app! The widget tutorial also appears automatically after pairing setup.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How do I delete the app from my child's device?</div>
+        <div class="faq-a">When parental controls are active, iOS prevents the app from being deleted to protect your child's restrictions. To delete the app: open Activate Fitness on the child's device, tap the gear icon, select "Unpair This Device", and enter your parent PIN. Once unpaired, all restrictions are lifted and the app can be deleted normally from the Home Screen.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Can my child delete the app to bypass restrictions?</div>
+        <div class="faq-a">No. While parental controls are active, Activate Fitness uses Apple's denyAppRemoval feature to prevent the app from being deleted. The "Delete App" option is grayed out on the child's device. Only a parent with the PIN can unpair the device and allow deletion. This ensures your child's restrictions remain in place.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1968,6 +1983,7 @@
           <div class="legal-highlight">HealthKit data is NOT stored in our cloud</div>
           <div class="legal-highlight">COPPA & GDPR compliant</div>
           <div class="legal-highlight">Full deletion rights — anytime, no questions</div>
+          <div class="legal-highlight">App deletion prevented on child devices (parental control)</div>
         </div>
         <a href="#" class="btn-outline" onclick="openLegal('privacy')">Read Full Privacy Policy</a>
       </div>
@@ -1980,6 +1996,8 @@
           <div class="legal-highlight">App requires iOS 17+ and parental setup</div>
           <div class="legal-highlight">Currently free — 30 days notice before any changes</div>
           <div class="legal-highlight">Parents responsible for appropriate use</div>
+          <div class="legal-highlight">App deletion prevented on child devices (parental control)</div>
+          <div class="legal-highlight">Screen Time resets to zero at midnight daily</div>
           <div class="legal-highlight">No warranty on 100% restriction accuracy (iOS limitation)</div>
           <div class="legal-highlight">Governed by California law</div>
         </div>
@@ -2200,6 +2218,31 @@
       <li>Data never sold, shared, or used for advertising</li>
       <li>Parents maintain full control over which apps are restricted</li>
     </ul>
+    <h3>App Deletion Prevention</h3>
+    <ul>
+      <li>When parental controls are active on a child's device, the App uses Apple's <strong>denyAppRemoval</strong> feature to prevent the child from deleting Activate Fitness</li>
+      <li>This ensures your child cannot bypass restrictions by removing the app</li>
+      <li>Parents can remove this protection at any time by unpairing the device (requires parent PIN)</li>
+      <li>Once unpaired, the app can be deleted normally from the Home Screen</li>
+    </ul>
+    <h3>Device Identifiers</h3>
+    <ul>
+      <li>We store an anonymous, app-specific device identifier (Apple's identifierForVendor) to pair your child's device with your parent account</li>
+      <li>This identifier is unique to Activate Fitness and cannot be used to track your child across other apps</li>
+      <li>The identifier is deleted when the device is unpaired or the child's profile is deleted</li>
+    </ul>
+    <h3>Live Activities & Home Screen Widget</h3>
+    <ul>
+      <li>The app may display a Lock Screen Live Activity during active screen time sessions showing the remaining countdown</li>
+      <li>A Home Screen widget can display the child's current Screen Time balance and step progress</li>
+      <li>Both features read data from the app's local storage on the device — no network requests are made by the widget or Live Activity</li>
+    </ul>
+    <h3>Push Notifications</h3>
+    <ul>
+      <li>We store the device's push notification token in Firebase to deliver alerts about earned screen time, schedule changes, and system notifications</li>
+      <li>Push notification tokens are not shared with any third party</li>
+      <li>Parents can disable notifications at any time through iOS Settings</li>
+    </ul>
 
     <h2>7. Data Retention & Deletion</h2>
     <p><strong>Active Accounts:</strong> We retain data while your account is active to provide services.</p>
@@ -2222,7 +2265,7 @@
       <li>Request correction of inaccurate information</li>
       <li>Request deletion of your child's information</li>
       <li>Withdraw consent for future collection</li>
-      <li>Request a copy of your data in a portable format</li>
+      <li>Request a copy of your data by emailing us</li>
     </ul>
     <p>GDPR users (European Economic Area) also have the right to object to processing and lodge complaints with your local data protection authority.</p>
 
@@ -2277,6 +2320,9 @@
       <li>Manages app restrictions on children's devices using Apple's Screen Time API</li>
       <li>Allows parents to set schedules, goals, restrictions, and bonus time</li>
       <li>Provides activity history and progress tracking</li>
+      <li>Prevents app deletion on child devices while parental controls are active (using Apple's denyAppRemoval)</li>
+      <li>Resets the child's Screen Time balance to zero at midnight each day — unused minutes do not carry over</li>
+      <li>Offers a Home Screen widget and Lock Screen Live Activity for at-a-glance status</li>
     </ul>
 
     <h2>4. Apple Platform Requirements</h2>

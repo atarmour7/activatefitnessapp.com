@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Activate Fitness — Email Verification</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand-red:   #E51A0F;
+    --brand-orange:#E65C14;
+    --brand-gold:  #FFBF00;
+    --dark:        #0a0a0a;
+    --dark-2:      #111111;
+    --dark-3:      #1a1a1a;
+    --white:       #ffffff;
+    --white-60:    rgba(255,255,255,0.6);
+    --white-20:    rgba(255,255,255,0.2);
+    --white-08:    rgba(255,255,255,0.08);
+    --grad:        linear-gradient(90deg, var(--brand-red), var(--brand-orange), var(--brand-gold));
+    --font-display:'Barlow Condensed', sans-serif;
+    --font-body:   'Barlow', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--dark);
+    color: var(--white);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .card {
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    padding: 48px 32px;
+    background: var(--dark-2);
+    border-radius: 24px;
+    border: 1px solid var(--white-08);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+  }
+  .logo-circle {
+    width: 80px; height: 80px;
+    border-radius: 20px;
+    background: var(--grad);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 36px;
+    font-weight: 900;
+    font-family: var(--font-display);
+    color: white;
+    letter-spacing: -2px;
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 28px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .gradient-text {
+    background: var(--grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .subtitle {
+    color: var(--white-60);
+    font-size: 15px;
+    margin-bottom: 32px;
+    line-height: 1.5;
+  }
+  .spinner {
+    width: 40px; height: 40px;
+    border: 3px solid var(--white-08);
+    border-top-color: var(--brand-orange);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 16px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .success-icon {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: rgba(52, 199, 89, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 32px;
+  }
+  .error-icon {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: rgba(255, 59, 48, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 32px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s;
+    margin-top: 16px;
+  }
+  .btn:hover { opacity: 0.9; }
+  .btn-primary {
+    background: var(--grad);
+    color: white;
+  }
+  .btn-secondary {
+    background: var(--white-08);
+    color: var(--white-60);
+    border: 1px solid var(--white-20);
+  }
+  .status-text {
+    color: var(--white-60);
+    font-size: 14px;
+    margin-top: 12px;
+  }
+  .hidden { display: none; }
+
+  /* Password reset form styles */
+  .form-group {
+    margin-bottom: 16px;
+    text-align: left;
+  }
+  .form-group label {
+    display: block;
+    font-size: 13px;
+    color: var(--white-60);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--dark-3);
+    border: 1px solid var(--white-20);
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-family: var(--font-body);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus {
+    border-color: var(--brand-orange);
+  }
+  .error-msg {
+    color: #FF3B30;
+    font-size: 13px;
+    margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="logo-circle">AF</div>
+  <h1><span class="gradient-text">Activate Fitness</span></h1>
+
+  <!-- Loading state -->
+  <div id="loading">
+    <div class="spinner"></div>
+    <p class="subtitle">Verifying your email...</p>
+  </div>
+
+  <!-- Success state (email verification) -->
+  <div id="success" class="hidden">
+    <div class="success-icon">✓</div>
+    <p class="subtitle">Your email has been verified successfully!</p>
+    <a href="activatefitness://emailVerified" class="btn btn-primary">Open Activate Fitness</a>
+    <p class="status-text">Redirecting to the app...</p>
+  </div>
+
+  <!-- Error state -->
+  <div id="error" class="hidden">
+    <div class="error-icon">✕</div>
+    <p class="subtitle" id="error-message">Something went wrong. The link may have expired.</p>
+    <a href="activatefitness://emailVerified" class="btn btn-secondary">Open Activate Fitness</a>
+    <p class="status-text">You can resend the verification email from within the app.</p>
+  </div>
+
+  <!-- Password reset form -->
+  <div id="reset-form" class="hidden">
+    <p class="subtitle">Enter your new password below.</p>
+    <div class="form-group">
+      <label for="new-password">New Password</label>
+      <input type="password" id="new-password" placeholder="Enter new password" minlength="6">
+    </div>
+    <div class="form-group">
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" placeholder="Confirm new password" minlength="6">
+    </div>
+    <p class="error-msg hidden" id="reset-error"></p>
+    <button class="btn btn-primary" onclick="submitPasswordReset()" id="reset-btn">Reset Password</button>
+  </div>
+
+  <!-- Password reset success -->
+  <div id="reset-success" class="hidden">
+    <div class="success-icon">✓</div>
+    <p class="subtitle">Your password has been reset successfully!</p>
+    <a href="activatefitness://passwordReset" class="btn btn-primary">Open Activate Fitness</a>
+    <p class="status-text">You can now sign in with your new password.</p>
+  </div>
+</div>
+
+<!-- Firebase JS SDK (compat for simplicity) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script>
+  // Firebase config — uses the WEB API key (from the verification URL),
+  // not the iOS API key from GoogleService-Info.plist.
+  const firebaseConfig = {
+    apiKey: "AIzaSyBCP0eNgTw9fZS_V-jplNeKVgDfOI3nI_4",
+    authDomain: "activatefitness-d2883.firebaseapp.com",
+    projectId: "activatefitness-d2883"
+  };
+  firebase.initializeApp(firebaseConfig);
+
+  // Extract URL parameters
+  const params = new URLSearchParams(window.location.search);
+  const mode    = params.get('mode');
+  const oobCode = params.get('oobCode');
+
+  const loadingEl     = document.getElementById('loading');
+  const successEl     = document.getElementById('success');
+  const errorEl       = document.getElementById('error');
+  const errorMsgEl    = document.getElementById('error-message');
+  const resetFormEl   = document.getElementById('reset-form');
+  const resetSuccessEl= document.getElementById('reset-success');
+
+  function showEl(el) {
+    // Hide all sections first
+    [loadingEl, successEl, errorEl, resetFormEl, resetSuccessEl].forEach(e => e.classList.add('hidden'));
+    el.classList.remove('hidden');
+  }
+
+  async function handleAction() {
+    if (!oobCode) {
+      showEl(errorEl);
+      errorMsgEl.textContent = 'Invalid link — no verification code found.';
+      return;
+    }
+
+    if (mode === 'verifyEmail' || mode === 'verifyAndChangeEmail') {
+      // Email verification — apply the action code directly
+      try {
+        await firebase.auth().applyActionCode(oobCode);
+        showEl(successEl);
+        // Auto-redirect to app after 2 seconds
+        setTimeout(() => {
+          window.location.href = 'activatefitness://emailVerified';
+        }, 2000);
+      } catch (err) {
+        console.error('Verification failed:', err);
+        showEl(errorEl);
+        if (err.code === 'auth/expired-action-code') {
+          errorMsgEl.textContent = 'This verification link has expired. Please request a new one from the app.';
+        } else if (err.code === 'auth/invalid-action-code') {
+          errorMsgEl.textContent = 'This link is invalid or has already been used.';
+        } else {
+          errorMsgEl.textContent = 'Verification failed: ' + err.message;
+        }
+      }
+
+    } else if (mode === 'resetPassword') {
+      // Password reset — show the form
+      try {
+        // Verify the code is valid before showing the form
+        await firebase.auth().verifyPasswordResetCode(oobCode);
+        showEl(resetFormEl);
+      } catch (err) {
+        console.error('Reset code verification failed:', err);
+        showEl(errorEl);
+        if (err.code === 'auth/expired-action-code') {
+          errorMsgEl.textContent = 'This password reset link has expired. Please request a new one.';
+        } else if (err.code === 'auth/invalid-action-code') {
+          errorMsgEl.textContent = 'This link is invalid or has already been used.';
+        } else {
+          errorMsgEl.textContent = 'Reset link verification failed: ' + err.message;
+        }
+      }
+
+    } else {
+      // Unknown mode — try applying anyway
+      try {
+        await firebase.auth().applyActionCode(oobCode);
+        showEl(successEl);
+        setTimeout(() => {
+          window.location.href = 'activatefitness://emailVerified';
+        }, 2000);
+      } catch (err) {
+        showEl(errorEl);
+        errorMsgEl.textContent = 'Could not process this link: ' + err.message;
+      }
+    }
+  }
+
+  // Password reset form submission
+  async function submitPasswordReset() {
+    const newPass    = document.getElementById('new-password').value;
+    const confirmPass= document.getElementById('confirm-password').value;
+    const resetError = document.getElementById('reset-error');
+    const resetBtn   = document.getElementById('reset-btn');
+
+    resetError.classList.add('hidden');
+
+    if (newPass.length < 6) {
+      resetError.textContent = 'Password must be at least 6 characters.';
+      resetError.classList.remove('hidden');
+      return;
+    }
+    if (newPass !== confirmPass) {
+      resetError.textContent = 'Passwords do not match.';
+      resetError.classList.remove('hidden');
+      return;
+    }
+
+    resetBtn.textContent = 'Resetting...';
+    resetBtn.disabled = true;
+
+    try {
+      await firebase.auth().confirmPasswordReset(oobCode, newPass);
+      showEl(resetSuccessEl);
+    } catch (err) {
+      resetBtn.textContent = 'Reset Password';
+      resetBtn.disabled = false;
+      resetError.textContent = 'Reset failed: ' + err.message;
+      resetError.classList.remove('hidden');
+    }
+  }
+
+  // Run on page load
+  handleAction();
+</script>
+</body>
+</html>

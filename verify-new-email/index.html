@@ -44,11 +44,23 @@
     border: 1px solid var(--white-08);
     box-shadow: 0 30px 80px rgba(0,0,0,0.5);
   }
-  .logo-circle {
+  /* Logo — uses the actual app icon image hosted in the same repo.
+     Add your AppLogo.png (or AppIcon.png) to the root of the GitHub repo,
+     then update the src below. Falls back to a styled text "AF" if the
+     image fails to load. */
+  .logo-img {
+    width: 80px; height: 80px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin: 0 auto 24px;
+    display: block;
+    box-shadow: 0 8px 24px rgba(230, 92, 20, 0.3);
+  }
+  .logo-fallback {
     width: 80px; height: 80px;
     border-radius: 20px;
     background: var(--grad);
-    display: flex;
+    display: none; /* shown only if image fails */
     align-items: center;
     justify-content: center;
     margin: 0 auto 24px;
@@ -134,8 +146,6 @@
     margin-top: 12px;
   }
   .hidden { display: none; }
-
-  /* Password reset form styles */
   .form-group {
     margin-bottom: 16px;
     text-align: left;
@@ -172,16 +182,20 @@
 <body>
 
 <div class="card">
-  <div class="logo-circle">AF</div>
+  <!-- Logo: Replace "logo.png" with your actual app icon filename.
+       Add the image file to the ROOT of your GitHub repo (same level as index.html).
+       Example: if you add AppLogo.png to the repo root, change src to "/AppLogo.png" -->
+  <img src="/logo.png" alt="Activate Fitness" class="logo-img"
+       onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';">
+  <div id="logo-fallback" class="logo-fallback">AF</div>
+
   <h1><span class="gradient-text">Activate Fitness</span></h1>
 
-  <!-- Loading state -->
   <div id="loading">
     <div class="spinner"></div>
     <p class="subtitle">Verifying your email...</p>
   </div>
 
-  <!-- Success state (email verification) -->
   <div id="success" class="hidden">
     <div class="success-icon">✓</div>
     <p class="subtitle">Your email has been verified successfully!</p>
@@ -189,7 +203,6 @@
     <p class="status-text">Redirecting to the app...</p>
   </div>
 
-  <!-- Error state -->
   <div id="error" class="hidden">
     <div class="error-icon">✕</div>
     <p class="subtitle" id="error-message">Something went wrong. The link may have expired.</p>
@@ -197,7 +210,6 @@
     <p class="status-text">You can resend the verification email from within the app.</p>
   </div>
 
-  <!-- Password reset form -->
   <div id="reset-form" class="hidden">
     <p class="subtitle">Enter your new password below.</p>
     <div class="form-group">
@@ -212,7 +224,6 @@
     <button class="btn btn-primary" onclick="submitPasswordReset()" id="reset-btn">Reset Password</button>
   </div>
 
-  <!-- Password reset success -->
   <div id="reset-success" class="hidden">
     <div class="success-icon">✓</div>
     <p class="subtitle">Your password has been reset successfully!</p>
@@ -221,12 +232,9 @@
   </div>
 </div>
 
-<!-- Firebase JS SDK (compat for simplicity) -->
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script>
-  // Firebase config — uses the WEB API key (from the verification URL),
-  // not the iOS API key from GoogleService-Info.plist.
   const firebaseConfig = {
     apiKey: "AIzaSyBCP0eNgTw9fZS_V-jplNeKVgDfOI3nI_4",
     authDomain: "activatefitness-d2883.firebaseapp.com",
@@ -234,7 +242,6 @@
   };
   firebase.initializeApp(firebaseConfig);
 
-  // Extract URL parameters
   const params = new URLSearchParams(window.location.search);
   const mode    = params.get('mode');
   const oobCode = params.get('oobCode');
@@ -247,7 +254,6 @@
   const resetSuccessEl= document.getElementById('reset-success');
 
   function showEl(el) {
-    // Hide all sections first
     [loadingEl, successEl, errorEl, resetFormEl, resetSuccessEl].forEach(e => e.classList.add('hidden'));
     el.classList.remove('hidden');
   }
@@ -260,16 +266,11 @@
     }
 
     if (mode === 'verifyEmail' || mode === 'verifyAndChangeEmail') {
-      // Email verification — apply the action code directly
       try {
         await firebase.auth().applyActionCode(oobCode);
         showEl(successEl);
-        // Auto-redirect to app after 2 seconds
-        setTimeout(() => {
-          window.location.href = 'activatefitness://emailVerified';
-        }, 2000);
+        setTimeout(() => { window.location.href = 'activatefitness://emailVerified'; }, 2000);
       } catch (err) {
-        console.error('Verification failed:', err);
         showEl(errorEl);
         if (err.code === 'auth/expired-action-code') {
           errorMsgEl.textContent = 'This verification link has expired. Please request a new one from the app.';
@@ -279,15 +280,11 @@
           errorMsgEl.textContent = 'Verification failed: ' + err.message;
         }
       }
-
     } else if (mode === 'resetPassword') {
-      // Password reset — show the form
       try {
-        // Verify the code is valid before showing the form
         await firebase.auth().verifyPasswordResetCode(oobCode);
         showEl(resetFormEl);
       } catch (err) {
-        console.error('Reset code verification failed:', err);
         showEl(errorEl);
         if (err.code === 'auth/expired-action-code') {
           errorMsgEl.textContent = 'This password reset link has expired. Please request a new one.';
@@ -297,15 +294,11 @@
           errorMsgEl.textContent = 'Reset link verification failed: ' + err.message;
         }
       }
-
     } else {
-      // Unknown mode — try applying anyway
       try {
         await firebase.auth().applyActionCode(oobCode);
         showEl(successEl);
-        setTimeout(() => {
-          window.location.href = 'activatefitness://emailVerified';
-        }, 2000);
+        setTimeout(() => { window.location.href = 'activatefitness://emailVerified'; }, 2000);
       } catch (err) {
         showEl(errorEl);
         errorMsgEl.textContent = 'Could not process this link: ' + err.message;
@@ -313,15 +306,12 @@
     }
   }
 
-  // Password reset form submission
   async function submitPasswordReset() {
     const newPass    = document.getElementById('new-password').value;
     const confirmPass= document.getElementById('confirm-password').value;
     const resetError = document.getElementById('reset-error');
     const resetBtn   = document.getElementById('reset-btn');
-
     resetError.classList.add('hidden');
-
     if (newPass.length < 6) {
       resetError.textContent = 'Password must be at least 6 characters.';
       resetError.classList.remove('hidden');
@@ -332,10 +322,8 @@
       resetError.classList.remove('hidden');
       return;
     }
-
     resetBtn.textContent = 'Resetting...';
     resetBtn.disabled = true;
-
     try {
       await firebase.auth().confirmPasswordReset(oobCode, newPass);
       showEl(resetSuccessEl);
@@ -347,7 +335,6 @@
     }
   }
 
-  // Run on page load
   handleAction();
 </script>
 </body>

@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Activate Fitness — Email Verification</title>
+<!-- UPDATED 6/10/26: Prevent aggressive Safari caching of the auth-handler
+     page. Without these tags, Safari can autocomplete "activatefitnessapp.com"
+     to this URL from history, leaving users staring at an "Invalid link" error
+     when they meant to visit the marketing site. -->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
@@ -35,6 +43,393 @@
     padding: 24px;
   }
   .card {
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    padding: 48px 32px;
+    background: var(--dark-2);
+    border-radius: 24px;
+    border: 1px solid var(--white-08);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+  }
+  .logo-img {
+    width: 80px; height: 80px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin: 0 auto 24px;
+    display: block;
+    box-shadow: 0 8px 24px rgba(230, 92, 20, 0.3);
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 28px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .gradient-text {
+    background: var(--grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .subtitle {
+    color: var(--white-60);
+    font-size: 15px;
+    margin-bottom: 32px;
+    line-height: 1.5;
+  }
+  .spinner {
+    width: 40px; height: 40px;
+    border: 3px solid var(--white-08);
+    border-top-color: var(--brand-orange);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 16px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .success-icon {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: rgba(52, 199, 89, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 32px;
+  }
+  .error-icon {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: rgba(255, 59, 48, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 32px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s;
+    margin-top: 16px;
+  }
+  .btn:hover { opacity: 0.9; }
+  .btn-primary {
+    background: var(--grad);
+    color: white;
+  }
+  .btn-secondary {
+    background: var(--white-08);
+    color: var(--white-60);
+    border: 1px solid var(--white-20);
+  }
+  .status-text {
+    color: var(--white-60);
+    font-size: 14px;
+    margin-top: 12px;
+  }
+  .hidden { display: none; }
+  .form-group {
+    margin-bottom: 16px;
+    text-align: left;
+  }
+  .form-group label {
+    display: block;
+    font-size: 13px;
+    color: var(--white-60);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--dark-3);
+    border: 1px solid var(--white-20);
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-family: var(--font-body);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus {
+    border-color: var(--brand-orange);
+  }
+  .error-msg {
+    color: #FF3B30;
+    font-size: 13px;
+    margin-top: 8px;
+  }
+
+  /* ADDED 6/10/26 — footer escape hatch so users are never stranded
+     on this page. Always rendered, in every state. */
+  .footer-link {
+    display: block;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--white-08);
+    color: var(--white-60);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-link:hover { color: var(--white); }
+  .footer-link strong { color: var(--brand-orange); }
+  /* Stacked button group when we offer both deep-link AND web fallback */
+  .btn + .btn { margin-top: 10px; display: inline-block; }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <img src="data:image/png;base64,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" alt="Activate Fitness" class="logo-img">
+
+  <h1><span class="gradient-text">Activate Fitness</span></h1>
+
+  <!-- LOADING state (initial + during action-code processing) -->
+  <div id="loading">
+    <div class="spinner"></div>
+    <p class="subtitle" id="loading-text">Verifying your email...</p>
+  </div>
+
+  <!-- VERIFICATION SUCCESS -->
+  <div id="success" class="hidden">
+    <div class="success-icon">✓</div>
+    <p class="subtitle">Your email has been verified successfully!</p>
+    <a href="activatefitness://emailVerified" class="btn btn-primary" id="success-deep-link">Open Activate Fitness</a>
+    <p class="status-text">Redirecting to the app...</p>
+  </div>
+
+  <!-- ERROR state -->
+  <div id="error" class="hidden">
+    <div class="error-icon">✕</div>
+    <p class="subtitle" id="error-message">Something went wrong. The link may have expired.</p>
+    <a href="activatefitness://emailVerified" class="btn btn-secondary" id="error-deep-link">Open Activate Fitness</a>
+    <a href="https://activatefitnessapp.com/" class="btn btn-primary">Go to Activate Fitness Website</a>
+    <p class="status-text">You can resend the verification email from within the app.</p>
+  </div>
+
+  <!-- PASSWORD RESET form -->
+  <div id="reset-form" class="hidden">
+    <p class="subtitle">Enter your new password below.</p>
+    <div class="form-group">
+      <label for="new-password">New Password</label>
+      <input type="password" id="new-password" placeholder="Enter new password" minlength="6">
+    </div>
+    <div class="form-group">
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" placeholder="Confirm new password" minlength="6">
+    </div>
+    <p class="error-msg hidden" id="reset-error"></p>
+    <button class="btn btn-primary" onclick="submitPasswordReset()" id="reset-btn">Reset Password</button>
+  </div>
+
+  <!-- PASSWORD RESET SUCCESS -->
+  <div id="reset-success" class="hidden">
+    <div class="success-icon">✓</div>
+    <p class="subtitle">Your password has been reset successfully!</p>
+    <a href="activatefitness://passwordReset" class="btn btn-primary">Open Activate Fitness</a>
+    <p class="status-text">You can now sign in with your new password.</p>
+  </div>
+
+  <!-- ADDED 6/10/26 — footer escape hatch.
+       Always visible so users who land here by accident (Safari URL
+       autocomplete from history, stale tab, mistyped path) have a clear,
+       one-tap route back to the marketing site. -->
+  <a href="https://activatefitnessapp.com/" class="footer-link">
+    ← Back to <strong>activatefitnessapp.com</strong>
+  </a>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script>
+  // ════════════════════════════════════════════════════════════════════════
+  //  Firebase Auth action handler — Activate Fitness
+  //
+  //  UPDATED 6/10/26 — ACCIDENTAL-LANDING FIX:
+  //
+  //  Symptom: Safari URL autocomplete (when the user types
+  //  "activatefitnessapp.com") would route to a previously-visited
+  //  /verify-email/ or /reset-password/ URL stored in history. With
+  //  the query parameters stripped (or never present in the auto-
+  //  completed URL), the page showed a scary "Invalid link — no
+  //  verification code found" error. The page is the same file at
+  //  both /verify-email/ and /reset-password/.
+  //
+  //  Fix:
+  //    1. When BOTH `mode` and `oobCode` are missing, treat the visit
+  //       as accidental and redirect to the homepage after a short,
+  //       visible delay (so the redirect isn't startling).
+  //    2. When `mode` is present but `oobCode` is missing, show a
+  //       friendly error and offer BOTH "Open Activate Fitness"
+  //       (deep link) AND "Go to Activate Fitness Website" (always
+  //       works, even with no app installed).
+  //    3. Every visible state has a footer link back to the
+  //       marketing site.
+  //    4. The deep-link buttons trigger an installed-app check:
+  //       if the activatefitness:// scheme isn't handled within
+  //       2.5 seconds, fall back to the homepage so users without
+  //       the app aren't stranded.
+  // ════════════════════════════════════════════════════════════════════════
+
+  const HOMEPAGE = 'https://activatefitnessapp.com/';
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBCP0eNgTw9fZS_V-jplNeKVgDfOI3nI_4",
+    authDomain: "activatefitness-d2883.firebaseapp.com",
+    projectId: "activatefitness-d2883"
+  };
+  firebase.initializeApp(firebaseConfig);
+
+  const params  = new URLSearchParams(window.location.search);
+  const mode    = params.get('mode');
+  const oobCode = params.get('oobCode');
+
+  const loadingEl     = document.getElementById('loading');
+  const loadingTextEl = document.getElementById('loading-text');
+  const successEl     = document.getElementById('success');
+  const errorEl       = document.getElementById('error');
+  const errorMsgEl    = document.getElementById('error-message');
+  const resetFormEl   = document.getElementById('reset-form');
+  const resetSuccessEl= document.getElementById('reset-success');
+
+  function showEl(el) {
+    [loadingEl, successEl, errorEl, resetFormEl, resetSuccessEl].forEach(e => e.classList.add('hidden'));
+    el.classList.remove('hidden');
+  }
+
+  // Wire up the success/error deep-link buttons with a homepage fallback.
+  // If the user doesn't have the app installed (or the URL scheme isn't
+  // registered), the activatefitness:// navigation silently fails. After
+  // 2.5 seconds with no app handoff (page still visible), fall back to
+  // the homepage so the user isn't stuck on a button that does nothing.
+  function attachDeepLinkFallback(buttonId) {
+    const btn = document.getElementById(buttonId);
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      let dismissed = false;
+      // If the OS hands the URL off to the app, the page becomes hidden
+      // and `visibilitychange` fires. We use that as the "app opened"
+      // signal — if it fires, cancel the fallback.
+      const onHide = () => {
+        if (document.visibilityState === 'hidden') {
+          dismissed = true;
+          document.removeEventListener('visibilitychange', onHide);
+        }
+      };
+      document.addEventListener('visibilitychange', onHide);
+      setTimeout(() => {
+        if (!dismissed && document.visibilityState !== 'hidden') {
+          window.location.href = HOMEPAGE;
+        }
+      }, 2500);
+    });
+  }
+  attachDeepLinkFallback('success-deep-link');
+  attachDeepLinkFallback('error-deep-link');
+
+  async function handleAction() {
+    // ── Case 1: No query params at all → accidental landing.
+    //   Redirect to homepage after a brief, visible delay so the
+    //   transition isn't jarring.
+    if (!mode && !oobCode) {
+      loadingTextEl.textContent = 'Redirecting to Activate Fitness...';
+      setTimeout(() => { window.location.replace(HOMEPAGE); }, 1500);
+      return;
+    }
+
+    // ── Case 2: Mode present but no oobCode → malformed or expired link.
+    //   Show friendly error with a website fallback.
+    if (!oobCode) {
+      showEl(errorEl);
+      errorMsgEl.textContent = 'This link is missing the verification code. It may have been truncated by your email client, or already used. Please request a new link from within the app.';
+      return;
+    }
+
+    // ── Case 3: oobCode present → process the action as normal.
+    if (mode === 'verifyEmail' || mode === 'verifyAndChangeEmail') {
+      try {
+        await firebase.auth().applyActionCode(oobCode);
+        showEl(successEl);
+        setTimeout(() => { window.location.href = 'activatefitness://emailVerified'; }, 2000);
+      } catch (err) {
+        showEl(errorEl);
+        if (err.code === 'auth/expired-action-code') {
+          errorMsgEl.textContent = 'This verification link has expired. Please request a new one from the app.';
+        } else if (err.code === 'auth/invalid-action-code') {
+          errorMsgEl.textContent = 'This link is invalid or has already been used.';
+        } else {
+          errorMsgEl.textContent = 'Verification failed: ' + err.message;
+        }
+      }
+    } else if (mode === 'resetPassword') {
+      try {
+        await firebase.auth().verifyPasswordResetCode(oobCode);
+        showEl(resetFormEl);
+      } catch (err) {
+        showEl(errorEl);
+        if (err.code === 'auth/expired-action-code') {
+          errorMsgEl.textContent = 'This password reset link has expired. Please request a new one.';
+        } else if (err.code === 'auth/invalid-action-code') {
+          errorMsgEl.textContent = 'This link is invalid or has already been used.';
+        } else {
+          errorMsgEl.textContent = 'Reset link verification failed: ' + err.message;
+        }
+      }
+    } else {
+      // Unknown mode but valid oobCode — try applying it as a fallback.
+      try {
+        await firebase.auth().applyActionCode(oobCode);
+        showEl(successEl);
+        setTimeout(() => { window.location.href = 'activatefitness://emailVerified'; }, 2000);
+      } catch (err) {
+        showEl(errorEl);
+        errorMsgEl.textContent = 'Could not process this link: ' + err.message;
+      }
+    }
+  }
+
+  async function submitPasswordReset() {
+    const newPass    = document.getElementById('new-password').value;
+    const confirmPass= document.getElementById('confirm-password').value;
+    const resetError = document.getElementById('reset-error');
+    const resetBtn   = document.getElementById('reset-btn');
+    resetError.classList.add('hidden');
+    if (newPass.length < 6) {
+      resetError.textContent = 'Password must be at least 6 characters.';
+      resetError.classList.remove('hidden');
+      return;
+    }
+    if (newPass !== confirmPass) {
+      resetError.textContent = 'Passwords do not match.';
+      resetError.classList.remove('hidden');
+      return;
+    }
+    resetBtn.textContent = 'Resetting...';
+    resetBtn.disabled = true;
+    try {
+      await firebase.auth().confirmPasswordReset(oobCode, newPass);
+      showEl(resetSuccessEl);
+    } catch (err) {
+      resetBtn.textContent = 'Reset Password';
+      resetBtn.disabled = false;
+      resetError.textContent = 'Reset failed: ' + err.message;
+      resetError.classList.remove('hidden');
+    }
+  }
+
+  handleAction();
+</script>
+</body>
+</html>  .card {
     max-width: 420px;
     width: 100%;
     text-align: center;

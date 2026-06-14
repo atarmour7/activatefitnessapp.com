@@ -1,0 +1,23 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["B658G8R9WM.com.andrewarmour.ActivateFitness"],
+        "components": [
+          {
+            "/": "/verify-email*",
+            "comment": "Email verification deep link — opens app directly from Firebase action URL"
+          },
+          {
+            "/": "/reset-password*",
+            "comment": "Password reset deep link"
+          },
+          {
+            "/": "/verify-new-email*",
+            "comment": "Email-change verification deep link"
+          }
+        ]
+      }
+    ]
+  }
+}

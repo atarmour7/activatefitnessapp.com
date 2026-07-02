@@ -1886,7 +1886,7 @@
 
       <div class="faq-item">
         <div class="faq-q">How do I delete my account or my child's data?</div>
-        <div class="faq-a">You can delete your child's profile directly from the app, which removes all their data from our servers within 30 days. To delete your entire parent account and all associated data, contact us at <a href="mailto:andrew.armour@activatefitnessapp.com">andrew.armour@activatefitnessapp.com</a>. We comply with COPPA and honor all deletion requests promptly.</div>
+        <div class="faq-a">You can delete a child's profile directly from the app, and you can delete your entire parent account and all associated data in-app from your Account settings ("Delete Account") — removal from our servers completes within 30 days. Prefer email? Contact us at <a href="mailto:andrew.armour@activatefitnessapp.com">andrew.armour@activatefitnessapp.com</a> and we'll process the request for you. We comply with COPPA and honor all deletion requests promptly.</div>
       </div>
 
       <div class="faq-item">
@@ -1953,7 +1953,7 @@
       <div class="safety-card">
         <div class="safety-icon">❤️</div>
         <h3 class="safety-title">HealthKit Stays Private</h3>
-        <p class="safety-desc">Step count data from Apple HealthKit is never stored in our cloud database. We only record whether a goal was completed — not detailed health metrics. Your child's health data stays on their device.</p>
+        <p class="safety-desc">Raw HealthKit samples never leave your child's device. We sync only a single derived number — the day's step total — so paired devices and your dashboard show the same progress. No workouts, heart rate, or other health records are ever collected.</p>
       </div>
 
       <div class="safety-card">
@@ -1997,12 +1997,12 @@
     <div class="legal-cards animate-on-scroll">
       <div class="legal-card">
         <h3 class="legal-card-title">Privacy Policy</h3>
-        <p class="legal-card-date">Last Updated: June 9, 2026</p>
-        <p class="legal-card-summary">We collect minimal data, only what's needed to run the app. Children's health data stays on-device. No advertising. No selling data. Full COPPA compliance.</p>
+        <p class="legal-card-date">Last Updated: July 1, 2026</p>
+        <p class="legal-card-summary">We collect minimal data, only what's needed to run the app. Raw HealthKit data stays on-device — only daily step totals sync. No advertising. No selling data. Full COPPA compliance.</p>
         <div class="legal-highlights">
           <div class="legal-highlight">We only collect step count — not health records</div>
           <div class="legal-highlight">Children's data never sold or shared with advertisers</div>
-          <div class="legal-highlight">HealthKit data is NOT stored in our cloud</div>
+          <div class="legal-highlight">Raw HealthKit data never leaves the device — only daily step totals sync</div>
           <div class="legal-highlight">COPPA & GDPR compliant</div>
           <div class="legal-highlight">Full deletion rights — anytime, no questions</div>
           <div class="legal-highlight">App deletion prevented on child devices (parental control)</div>
@@ -2069,7 +2069,7 @@
       <div class="support-card">
         <div class="support-card-icon">🗑️</div>
         <h3 class="support-card-title">Delete Your Data</h3>
-        <p class="support-card-desc">To delete a child profile, use the app. To delete your entire account and all data, email us with "Account Deletion Request" in the subject line.</p>
+        <p class="support-card-desc">Delete a child profile — or your entire account — directly in the app from your Account settings. Prefer email? Send a request with "Account Deletion Request" in the subject line.</p>
         <a href="mailto:andrew.armour@activatefitnessapp.com?subject=Account%20Deletion%20Request" class="support-link">Request Deletion →</a>
       </div>
     </div>
@@ -2160,7 +2160,7 @@
   </div>
   <div class="legal-page-content">
     <h1>Privacy<br>Policy</h1>
-    <p class="last-updated">Effective Date: June 9, 2026 · Last Modified: June 9, 2026</p>
+    <p class="last-updated">Effective Date: June 9, 2026 · Last Modified: July 1, 2026</p>
 
     <div class="legal-highlight-box">
       <p><strong>For Parents:</strong> Activate Fitness is designed for use by children under parental supervision. We comply with COPPA and do not collect personal information from children under 13 without verifiable parental consent. We do NOT sell data, use tracking, or show ads.</p>
@@ -2185,7 +2185,7 @@
 
     <h3>A. From Parents (Account Information)</h3>
     <ul>
-      <li>Email address and password (or Sign In with Apple/Google identifiers)</li>
+      <li>Email address and password (or Sign In with Apple identifiers)</li>
       <li>Parental consent records: timestamp, age category, App version, consent method</li>
       <li>Any information you voluntarily send via support email</li>
     </ul>
@@ -2212,6 +2212,7 @@
       <li>FamilyActivitySelection tokens (opaque — cannot be linked to specific apps by us; Apple's framework prevents that)</li>
       <li>DeviceActivity event counts for enforcing restrictions</li>
       <li>Screen-time balance, session times, and pause/resume events</li>
+      <li>Wearable exception requests submitted by your child, including an optional short message (e.g., "charging my watch"), shown to you for approval</li>
     </ul>
 
     <h3>E. Device & Technical Information</h3>
@@ -2219,7 +2220,9 @@
       <li>Device identifier for vendor (identifierForVendor) — for pairing only</li>
       <li>Firebase Cloud Messaging push token — for notifications only</li>
       <li>App version, OS version, and approximate time zone</li>
+      <li>Paired device name (e.g., "Emma's iPhone") and last-active timestamp — shown in your dashboard so you can manage paired devices</li>
       <li>Anonymous Firebase Authentication UID for child devices</li>
+      <li>Crash reports via Firebase Crashlytics — enabled only after you grant consent during setup; includes device model, OS version, and technical crash details. Used solely to diagnose and fix bugs, never for advertising or profiling</li>
     </ul>
 
     <h3>F. What We Do NOT Collect</h3>
@@ -2264,7 +2267,7 @@
     <h2>6. Data Sharing</h2>
     <p>We do NOT sell personal information. We share data only with:</p>
     <ul>
-      <li><strong>Google LLC / Firebase:</strong> Authentication, Cloud Firestore, Cloud Storage, Cloud Functions, Cloud Messaging — acts as data processor under Google Cloud DPA</li>
+      <li><strong>Google LLC / Firebase:</strong> Authentication, Cloud Firestore, Cloud Storage, Cloud Functions, Cloud Messaging, and Crashlytics (crash reporting, enabled only with your consent) — acts as data processor under Google Cloud DPA</li>
       <li><strong>Apple Inc.:</strong> HealthKit, FamilyControls, DeviceActivity, Push Notifications — governed by Apple's published terms</li>
       <li><strong>Legal requirements:</strong> If required by law, court order, or to protect rights, property, or safety</li>
       <li><strong>Business transfers:</strong> In connection with a merger, acquisition, or sale of assets — with prior notice to you</li>
@@ -2305,10 +2308,10 @@
       <li><strong>Active accounts:</strong> retained while active</li>
       <li><strong>Child profiles:</strong> until parent deletes the child or account</li>
       <li><strong>Activity data:</strong> rolling 365-day retention</li>
-      <li><strong>Consent records:</strong> life of account plus 2 years (16 CFR 312.10)</li>
+      <li><strong>Consent records:</strong> retained while your account is active; deleted when you delete your account</li>
       <li><strong>Backups:</strong> up to 30 days</li>
     </ul>
-    <p>When you delete your account, we delete all child profiles, activity records, consent records, tokens, photos, and auth records.</p>
+    <p>We retain each category of information only as long as reasonably necessary for the purposes described in Section 4, and never indefinitely. When you delete your account, we delete all child profiles, activity records, consent records, tokens, photos, and auth records.</p>
 
     <h2>12. Security</h2>
     <p>We use TLS 1.2+ encryption in transit, encryption at rest in Firebase, row-level security rules, and restricted backend access. No system is 100% secure. If we become aware of a breach, we notify affected users and authorities as required by law.</p>

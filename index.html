@@ -5,10 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Activate Fitness — Earn Screen Time. Stay Active.</title>
 <meta name="description" content="Activate Fitness turns physical activity into screen time rewards. Kids walk their daily step goal, unlock their apps. Parents set the rules. Apple HealthKit + Screen Time API.">
-
 <!-- Apple Smart App Banner — one-tap install banner for iOS Safari visitors -->
 <meta name="apple-itunes-app" content="app-id=6760926366">
-
 <!-- Open Graph — preview card when shared on iMessage, Slack, LinkedIn, Facebook, etc. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Activate Fitness">
@@ -16,17 +14,14 @@
 <meta property="og:description" content="Turn physical activity into screen time rewards. Kids walk their daily step goal, unlock their apps. Parents set the rules.">
 <meta property="og:url" content="https://activatefitnessapp.com">
 <meta property="og:image" content="https://activatefitnessapp.com/images/logo.png">
-
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Activate Fitness — Earn Screen Time. Stay Active.">
 <meta name="twitter:description" content="Turn physical activity into screen time rewards. Kids walk their daily step goal, unlock their apps.">
 <meta name="twitter:image" content="https://activatefitnessapp.com/images/logo.png">
-
 <!-- Theme color + iOS touch icon -->
 <meta name="theme-color" content="#0a0a0a">
 <link rel="apple-touch-icon" href="/images/logo.png">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -48,11 +43,8 @@
     --font-display: 'Barlow Condensed', sans-serif;
     --font-body:    'Barlow', sans-serif;
   }
-
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
-
   body {
     background: var(--dark);
     color: var(--white);
@@ -61,7 +53,6 @@
     line-height: 1.6;
     overflow-x: hidden;
   }
-
   /* ─── NOISE OVERLAY ─────────────────────────────── */
   body::before {
     content: '';
@@ -72,7 +63,6 @@
     z-index: 9999;
     opacity: 0.4;
   }
-
   /* ─── NAV ───────────────────────────────────────── */
   nav {
     position: fixed;
@@ -86,14 +76,12 @@
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--white-08);
   }
-
   .nav-logo {
     display: flex;
     align-items: center;
     gap: 12px;
     text-decoration: none;
   }
-
   .nav-logo-icon {
     width: 40px; height: 40px;
     border-radius: 10px;
@@ -107,7 +95,6 @@
     font-family: var(--font-display);
     letter-spacing: -1px;
   }
-
   .nav-logo-text {
     font-family: var(--font-display);
     font-weight: 800;
@@ -116,14 +103,12 @@
     color: var(--white);
     text-transform: uppercase;
   }
-
   .nav-links {
     display: flex;
     align-items: center;
     gap: 36px;
     list-style: none;
   }
-
   .nav-links a {
     color: var(--white-60);
     text-decoration: none;
@@ -133,9 +118,7 @@
     text-transform: uppercase;
     transition: color 0.2s;
   }
-
   .nav-links a:hover { color: var(--white); }
-
   .nav-cta {
     background: var(--grad);
     color: white !important;
@@ -145,9 +128,7 @@
     font-size: 13px !important;
     letter-spacing: 0.5px;
   }
-
   .nav-cta:hover { opacity: 0.9; }
-
   /* ─── HERO ──────────────────────────────────────── */
   .hero {
     min-height: 100vh;
@@ -160,7 +141,6 @@
     position: relative;
     overflow: hidden;
   }
-
   .hero-glow {
     position: absolute;
     top: 30%;
@@ -171,7 +151,6 @@
     background: radial-gradient(ellipse, rgba(230, 92, 20, 0.18) 0%, transparent 70%);
     pointer-events: none;
   }
-
   .hero-badge {
     display: inline-flex;
     align-items: center;
@@ -188,7 +167,6 @@
     margin-bottom: 32px;
     animation: fadeInUp 0.6s ease both;
   }
-
   .hero h1 {
     font-family: var(--font-display);
     font-weight: 900;
@@ -199,14 +177,12 @@
     margin-bottom: 28px;
     animation: fadeInUp 0.6s 0.1s ease both;
   }
-
   .hero h1 .gradient-text {
     background: var(--grad);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-
   .hero-sub {
     font-size: clamp(18px, 2.5vw, 22px);
     font-weight: 300;
@@ -216,7 +192,6 @@
     line-height: 1.5;
     animation: fadeInUp 0.6s 0.2s ease both;
   }
-
   .hero-actions {
     display: flex;
     gap: 16px;
@@ -225,7 +200,6 @@
     flex-wrap: wrap;
     animation: fadeInUp 0.6s 0.3s ease both;
   }
-
   .btn-primary {
     display: inline-flex;
     align-items: center;
@@ -241,12 +215,10 @@
     transition: transform 0.2s, box-shadow 0.2s;
     box-shadow: 0 0 40px rgba(230, 92, 20, 0.4);
   }
-
   .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 48px rgba(230, 92, 20, 0.5);
   }
-
   .btn-secondary {
     display: inline-flex;
     align-items: center;
@@ -260,9 +232,7 @@
     border-radius: 100px;
     transition: color 0.2s, border-color 0.2s;
   }
-
   .btn-secondary:hover { color: white; border-color: var(--white-60); }
-
   .hero-phones {
     margin-top: 80px;
     position: relative;
@@ -271,7 +241,6 @@
     gap: 20px;
     animation: fadeInUp 0.8s 0.4s ease both;
   }
-
   /* Phone mockup */
   .phone-mockup {
     width: 200px;
@@ -282,14 +251,12 @@
     box-shadow: 0 40px 80px rgba(0,0,0,0.6);
     position: relative;
   }
-
   .phone-mockup.center {
     width: 230px;
     margin-top: -30px;
     border-color: rgba(230,92,20,0.3);
     box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(230,92,20,0.15);
   }
-
   .phone-screen {
     background: #111;
     min-height: 420px;
@@ -299,12 +266,10 @@
     align-items: center;
     gap: 12px;
   }
-
   .phone-screen.center-screen {
     background: linear-gradient(180deg, #0d0d0d 0%, #111 100%);
     min-height: 480px;
   }
-
   /* Simulated UI elements inside phones */
   .p-chip {
     font-size: 9px;
@@ -315,7 +280,6 @@
     letter-spacing: 0.5px;
     text-transform: uppercase;
   }
-
   .p-steps-ring {
     width: 120px;
     height: 120px;
@@ -327,7 +291,6 @@
     justify-content: center;
     flex-direction: column;
   }
-
   .p-steps-ring::after {
     content: '';
     position: absolute;
@@ -338,7 +301,6 @@
     border-right-color: #FFBF00;
     transform: rotate(-30deg);
   }
-
   .p-ring-num {
     font-family: var(--font-display);
     font-weight: 900;
@@ -349,13 +311,11 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-
   .p-ring-label {
     font-size: 9px;
     color: rgba(255,255,255,0.4);
     font-weight: 500;
   }
-
   .p-balance-card {
     width: 100%;
     background: rgba(255,255,255,0.06);
@@ -364,7 +324,6 @@
     padding: 12px;
     text-align: center;
   }
-
   .p-balance-num {
     font-family: var(--font-display);
     font-weight: 900;
@@ -375,13 +334,11 @@
     background-clip: text;
     line-height: 1;
   }
-
   .p-balance-label {
     font-size: 9px;
     color: rgba(255,255,255,0.4);
     margin-top: 2px;
   }
-
   .p-play-btn {
     width: 70px;
     height: 70px;
@@ -394,7 +351,6 @@
     box-shadow: 0 0 30px rgba(230,92,20,0.5);
     margin: 4px 0;
   }
-
   .p-stat-row {
     width: 100%;
     display: flex;
@@ -404,23 +360,19 @@
     border-radius: 10px;
     border: 1px solid rgba(255,255,255,0.06);
   }
-
   .p-stat-item {
     text-align: center;
   }
-
   .p-stat-num {
     font-family: var(--font-display);
     font-weight: 800;
     font-size: 14px;
     color: white;
   }
-
   .p-stat-lbl {
     font-size: 8px;
     color: rgba(255,255,255,0.3);
   }
-
   /* Parent phone */
   .p-child-card {
     width: 100%;
@@ -429,7 +381,6 @@
     border: 1px solid rgba(255,255,255,0.08);
     padding: 12px;
   }
-
   .p-child-name {
     font-family: var(--font-display);
     font-weight: 700;
@@ -437,18 +388,15 @@
     color: white;
     margin-bottom: 6px;
   }
-
   .p-child-stat-line {
     display: flex;
     justify-content: space-between;
     margin-top: 6px;
   }
-
   .p-child-stat-left {
     font-size: 8px;
     color: rgba(255,255,255,0.4);
   }
-
   .p-child-stat-right {
     font-size: 8px;
     font-weight: 700;
@@ -457,7 +405,6 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-
   .p-progress-bar {
     height: 4px;
     background: rgba(255,255,255,0.08);
@@ -465,14 +412,12 @@
     margin-top: 8px;
     overflow: hidden;
   }
-
   .p-progress-fill {
     height: 100%;
     width: 73%;
     background: var(--grad);
     border-radius: 100px;
   }
-
   .p-action-btn {
     width: 100%;
     padding: 8px;
@@ -487,17 +432,14 @@
     color: rgba(255,255,255,0.7);
     margin-top: 4px;
   }
-
   /* ─── SECTION SHARED ─────────────────────────────── */
   section {
     padding: 100px 24px;
   }
-
   .container {
     max-width: 1100px;
     margin: 0 auto;
   }
-
   .section-label {
     display: inline-block;
     font-family: var(--font-display);
@@ -508,7 +450,6 @@
     color: var(--brand-orange);
     margin-bottom: 16px;
   }
-
   .section-title {
     font-family: var(--font-display);
     font-weight: 900;
@@ -518,7 +459,6 @@
     letter-spacing: -0.5px;
     margin-bottom: 20px;
   }
-
   .section-subtitle {
     font-size: 18px;
     color: var(--white-60);
@@ -526,17 +466,14 @@
     max-width: 500px;
     line-height: 1.6;
   }
-
   /* ─── HOW IT WORKS ──────────────────────────────── */
   #how-it-works { background: var(--dark-2); }
-
   .steps-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 2px;
     margin-top: 64px;
   }
-
   .step-card {
     background: var(--dark-3);
     padding: 40px 32px;
@@ -544,12 +481,9 @@
     overflow: hidden;
     transition: background 0.3s;
   }
-
   .step-card:hover { background: var(--dark-4); }
-
   .step-card:first-child { border-radius: 24px 0 0 24px; }
   .step-card:last-child  { border-radius: 0 24px 24px 0; }
-
   .step-number {
     font-family: var(--font-display);
     font-weight: 900;
@@ -560,12 +494,10 @@
     top: 16px;
     right: 20px;
   }
-
   .step-icon {
     font-size: 36px;
     margin-bottom: 20px;
   }
-
   .step-title {
     font-family: var(--font-display);
     font-weight: 800;
@@ -575,13 +507,11 @@
     margin-bottom: 12px;
     line-height: 1.1;
   }
-
   .step-desc {
     font-size: 14px;
     color: var(--white-60);
     line-height: 1.6;
   }
-
   .step-accent {
     position: absolute;
     bottom: 0;
@@ -592,9 +522,7 @@
     opacity: 0;
     transition: opacity 0.3s;
   }
-
   .step-card:hover .step-accent { opacity: 1; }
-
   /* ─── FEATURES ──────────────────────────────────── */
   .features-grid {
     display: grid;
@@ -605,15 +533,12 @@
     overflow: hidden;
     margin-top: 64px;
   }
-
   .feature-card {
     background: var(--dark-2);
     padding: 40px 32px;
     transition: background 0.3s;
   }
-
   .feature-card:hover { background: var(--dark-3); }
-
   .feature-icon-wrap {
     width: 52px;
     height: 52px;
@@ -626,7 +551,6 @@
     margin-bottom: 20px;
     border: 1px solid var(--white-08);
   }
-
   .feature-title {
     font-family: var(--font-display);
     font-weight: 800;
@@ -636,16 +560,13 @@
     margin-bottom: 10px;
     line-height: 1.1;
   }
-
   .feature-desc {
     font-size: 14px;
     color: var(--white-60);
     line-height: 1.6;
   }
-
   /* ─── DUAL EXPERIENCE ───────────────────────────── */
   #experience { background: var(--dark); }
-
   .dual-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -654,16 +575,13 @@
     border-radius: 24px;
     overflow: hidden;
   }
-
   .dual-panel {
     padding: 56px 48px;
     position: relative;
     overflow: hidden;
   }
-
   .dual-panel.parent { background: var(--dark-3); }
   .dual-panel.child  { background: linear-gradient(135deg, #0f0a00 0%, #1a0e00 100%); border-left: 1px solid rgba(255,191,0,0.15); }
-
   .dual-tag {
     display: inline-block;
     font-family: var(--font-display);
@@ -675,10 +593,8 @@
     border-radius: 100px;
     margin-bottom: 24px;
   }
-
   .dual-panel.parent .dual-tag { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6); }
   .dual-panel.child .dual-tag  { background: rgba(255,191,0,0.12); color: var(--brand-gold); }
-
   .dual-title {
     font-family: var(--font-display);
     font-weight: 900;
@@ -688,21 +604,18 @@
     letter-spacing: -0.5px;
     margin-bottom: 32px;
   }
-
   .dual-panel.child .dual-title {
     background: var(--grad);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-
   .dual-list {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 14px;
   }
-
   .dual-list li {
     display: flex;
     align-items: flex-start;
@@ -711,7 +624,6 @@
     color: var(--white-60);
     line-height: 1.5;
   }
-
   .dual-list li .check {
     flex-shrink: 0;
     width: 20px;
@@ -724,17 +636,14 @@
     font-size: 11px;
     margin-top: 1px;
   }
-
   /* ─── FAQ ────────────────────────────────────────── */
   #faq { background: var(--dark-2); }
-
   .faq-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2px;
     margin-top: 64px;
   }
-
   .faq-item {
     background: var(--dark-3);
     padding: 32px;
@@ -742,9 +651,7 @@
     transition: background 0.2s;
     border-radius: 4px;
   }
-
   .faq-item:hover { background: var(--dark-4); }
-
   .faq-q {
     font-family: var(--font-display);
     font-weight: 700;
@@ -755,38 +662,31 @@
     line-height: 1.2;
     color: white;
   }
-
   .faq-a {
     font-size: 14px;
     color: var(--white-60);
     line-height: 1.7;
   }
-
   .faq-a a { color: var(--brand-gold); text-decoration: none; }
   .faq-a a:hover { text-decoration: underline; }
-
   /* ─── PRIVACY / SAFETY ──────────────────────────── */
   #privacy-safety { background: var(--dark); }
-
   .safety-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     margin-top: 64px;
   }
-
   .safety-card {
     background: var(--dark-2);
     border: 1px solid var(--white-08);
     border-radius: 20px;
     padding: 36px 28px;
   }
-
   .safety-icon {
     font-size: 32px;
     margin-bottom: 16px;
   }
-
   .safety-title {
     font-family: var(--font-display);
     font-weight: 800;
@@ -795,23 +695,19 @@
     letter-spacing: 0.3px;
     margin-bottom: 10px;
   }
-
   .safety-desc {
     font-size: 14px;
     color: var(--white-60);
     line-height: 1.7;
   }
-
   /* ─── SUPPORT ────────────────────────────────────── */
   #support { background: var(--dark-2); }
-
   .support-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     margin-top: 64px;
   }
-
   .support-card {
     background: var(--dark);
     border: 1px solid var(--white-08);
@@ -820,17 +716,14 @@
     text-align: center;
     transition: border-color 0.2s, transform 0.2s;
   }
-
   .support-card:hover {
     border-color: rgba(230,92,20,0.3);
     transform: translateY(-4px);
   }
-
   .support-card-icon {
     font-size: 40px;
     margin-bottom: 16px;
   }
-
   .support-card-title {
     font-family: var(--font-display);
     font-weight: 800;
@@ -839,14 +732,12 @@
     letter-spacing: 0.3px;
     margin-bottom: 10px;
   }
-
   .support-card-desc {
     font-size: 14px;
     color: var(--white-60);
     line-height: 1.6;
     margin-bottom: 20px;
   }
-
   .support-link {
     display: inline-block;
     color: var(--brand-gold);
@@ -856,19 +747,15 @@
     border-bottom: 1px solid transparent;
     transition: border-color 0.2s;
   }
-
   .support-link:hover { border-color: var(--brand-gold); }
-
   /* ─── LEGAL DOCS ─────────────────────────────────── */
   #legal { background: var(--dark); }
-
   .legal-cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
     margin-top: 64px;
   }
-
   .legal-card {
     background: var(--dark-2);
     border: 1px solid var(--white-08);
@@ -877,7 +764,6 @@
     position: relative;
     overflow: hidden;
   }
-
   .legal-card::before {
     content: '';
     position: absolute;
@@ -887,7 +773,6 @@
     height: 3px;
     background: var(--grad);
   }
-
   .legal-card-title {
     font-family: var(--font-display);
     font-weight: 900;
@@ -896,7 +781,6 @@
     letter-spacing: -0.3px;
     margin-bottom: 12px;
   }
-
   .legal-card-date {
     font-size: 12px;
     color: var(--white-60);
@@ -905,21 +789,18 @@
     text-transform: uppercase;
     font-weight: 500;
   }
-
   .legal-card-summary {
     font-size: 14px;
     color: var(--white-60);
     line-height: 1.7;
     margin-bottom: 28px;
   }
-
   .legal-highlights {
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-bottom: 28px;
   }
-
   .legal-highlight {
     display: flex;
     align-items: center;
@@ -927,7 +808,6 @@
     font-size: 13px;
     color: var(--white-60);
   }
-
   .legal-highlight::before {
     content: '✓';
     display: flex;
@@ -942,7 +822,6 @@
     font-weight: 700;
     flex-shrink: 0;
   }
-
   .btn-outline {
     display: inline-block;
     border: 1px solid var(--white-20);
@@ -955,12 +834,10 @@
     letter-spacing: 0.3px;
     transition: border-color 0.2s, background 0.2s;
   }
-
   .btn-outline:hover {
     border-color: var(--brand-orange);
     background: rgba(230,92,20,0.05);
   }
-
   /* ─── LEGAL FULL PAGE ───────────────────────────── */
   .legal-page {
     display: none;
@@ -971,9 +848,7 @@
     overflow-y: auto;
     padding: 0;
   }
-
   .legal-page.active { display: block; }
-
   .legal-page-header {
     position: sticky;
     top: 0;
@@ -986,7 +861,6 @@
     gap: 20px;
     z-index: 10;
   }
-
   .legal-page-back {
     background: none;
     border: 1px solid var(--white-20);
@@ -999,9 +873,7 @@
     font-weight: 500;
     transition: border-color 0.2s;
   }
-
   .legal-page-back:hover { border-color: var(--white-60); }
-
   .legal-page-title {
     font-family: var(--font-display);
     font-weight: 800;
@@ -1009,13 +881,11 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
-
   .legal-page-content {
     max-width: 800px;
     margin: 0 auto;
     padding: 60px 24px 100px;
   }
-
   .legal-page-content h1 {
     font-family: var(--font-display);
     font-weight: 900;
@@ -1025,7 +895,6 @@
     line-height: 1;
     margin-bottom: 8px;
   }
-
   .legal-page-content .last-updated {
     font-size: 13px;
     color: var(--white-60);
@@ -1034,7 +903,6 @@
     letter-spacing: 0.5px;
     font-weight: 500;
   }
-
   .legal-page-content h2 {
     font-family: var(--font-display);
     font-weight: 800;
@@ -1047,7 +915,6 @@
     border-top: 1px solid var(--white-08);
     line-height: 1.1;
   }
-
   .legal-page-content h3 {
     font-family: var(--font-display);
     font-weight: 700;
@@ -1058,30 +925,25 @@
     margin-bottom: 10px;
     color: var(--brand-orange);
   }
-
   .legal-page-content p {
     font-size: 15px;
     color: var(--white-60);
     line-height: 1.8;
     margin-bottom: 14px;
   }
-
   .legal-page-content ul, .legal-page-content ol {
     margin: 12px 0 12px 24px;
   }
-
   .legal-page-content li {
     font-size: 15px;
     color: var(--white-60);
     line-height: 1.7;
     margin-bottom: 6px;
   }
-
   .legal-page-content strong {
     color: var(--white);
     font-weight: 600;
   }
-
   .legal-highlight-box {
     background: rgba(230,92,20,0.06);
     border: 1px solid rgba(230,92,20,0.2);
@@ -1089,17 +951,14 @@
     padding: 20px 24px;
     margin: 24px 0;
   }
-
   .legal-highlight-box p { color: var(--white-60); margin: 0; }
   .legal-highlight-box strong { color: var(--brand-gold); }
-
   /* ─── CTA SECTION ────────────────────────────────── */
   .cta-section {
     background: var(--dark-2);
     text-align: center;
     padding: 120px 24px;
   }
-
   .cta-section h2 {
     font-family: var(--font-display);
     font-weight: 900;
@@ -1109,27 +968,23 @@
     letter-spacing: -0.5px;
     margin-bottom: 24px;
   }
-
   .cta-section p {
     font-size: 18px;
     color: var(--white-60);
     margin-bottom: 48px;
   }
-
   /* ─── FOOTER ─────────────────────────────────────── */
   footer {
     background: var(--dark);
     border-top: 1px solid var(--white-08);
     padding: 60px 48px 40px;
   }
-
   .footer-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 48px;
     margin-bottom: 60px;
   }
-
   .footer-brand p {
     font-size: 14px;
     color: var(--white-60);
@@ -1137,7 +992,6 @@
     margin-top: 16px;
     line-height: 1.6;
   }
-
   .footer-col-title {
     font-family: var(--font-display);
     font-weight: 700;
@@ -1147,18 +1001,14 @@
     color: var(--white-60);
     margin-bottom: 16px;
   }
-
   .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-
   .footer-col a {
     color: var(--white-60);
     text-decoration: none;
     font-size: 14px;
     transition: color 0.2s;
   }
-
   .footer-col a:hover { color: var(--white); }
-
   .footer-bottom {
     border-top: 1px solid var(--white-08);
     padding-top: 32px;
@@ -1166,12 +1016,10 @@
     justify-content: space-between;
     align-items: center;
   }
-
   .footer-bottom p {
     font-size: 13px;
     color: rgba(255,255,255,0.3);
   }
-
   .footer-app-badge {
     display: inline-flex;
     align-items: center;
@@ -1183,39 +1031,31 @@
     text-decoration: none;
     transition: background 0.2s;
   }
-
   .footer-app-badge:hover { background: rgba(255,255,255,0.12); }
-
   .footer-app-badge span {
     display: flex;
     flex-direction: column;
   }
-
   .fab-sub { font-size: 10px; color: var(--white-60); letter-spacing: 0.5px; }
   .fab-main { font-size: 15px; font-weight: 600; color: white; }
-
   /* ─── ANIMATIONS ─────────────────────────────────── */
   @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(32px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-
   @keyframes pulse-glow {
     0%, 100% { box-shadow: 0 0 40px rgba(230, 92, 20, 0.3); }
     50%       { box-shadow: 0 0 80px rgba(230, 92, 20, 0.6); }
   }
-
   .animate-on-scroll {
     opacity: 0;
     transform: translateY(32px);
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
-
   .animate-on-scroll.visible {
     opacity: 1;
     transform: translateY(0);
   }
-
   /* ─── RESPONSIVE ─────────────────────────────────── */
   /* ─── WEARABLE CARDS GRID ────────────────────────── */
   .wearable-cards-grid {
@@ -1226,7 +1066,6 @@
     border-radius: 24px;
     overflow: hidden;
   }
-
   .wearable-card {
     background: var(--dark-2);
     padding: 40px 32px;
@@ -1236,11 +1075,8 @@
     position: relative;
     overflow: hidden;
   }
-
   .wearable-card-accent { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--grad); }
-
   .wearable-card-icon { font-size: 40px; }
-
   .wearable-card-title {
     font-family: var(--font-display);
     font-weight: 900;
@@ -1249,14 +1085,12 @@
     letter-spacing: -0.3px;
     line-height: 1.1;
   }
-
   .wearable-card-desc {
     font-size: 14px;
     color: var(--white-60);
     line-height: 1.7;
     flex: 1;
   }
-
   .wearable-badge-gold {
     display: inline-flex;
     align-items: center;
@@ -1272,7 +1106,6 @@
     color: var(--brand-gold);
     width: fit-content;
   }
-
   .wearable-badge-grey {
     display: inline-flex;
     align-items: center;
@@ -1288,7 +1121,6 @@
     color: rgba(255,255,255,0.5);
     width: fit-content;
   }
-
   /* ─── RING BONUS CALLOUT ─────────────────────────── */
   .ring-bonus-grid {
     display: grid;
@@ -1301,14 +1133,12 @@
     border-radius: 24px;
     padding: 48px;
   }
-
   .ring-bonus-steps {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 16px;
     padding: 20px 24px;
   }
-
   .ring-bonus-steps-title {
     font-family: var(--font-display);
     font-weight: 800;
@@ -1318,7 +1148,6 @@
     color: rgba(255,255,255,0.4);
     margin-bottom: 12px;
   }
-
   .ring-bonus-step-row {
     display: flex;
     align-items: center;
@@ -1327,9 +1156,7 @@
     color: var(--white-60);
     margin-bottom: 10px;
   }
-
   .ring-bonus-step-row:last-child { margin-bottom: 0; }
-
   .ring-step-num {
     width: 24px; height: 24px;
     border-radius: 50%;
@@ -1338,7 +1165,6 @@
     font-size: 11px; font-weight: 700;
     flex-shrink: 0;
   }
-
   .ring-bonus-note {
     background: rgba(255,191,0,0.06);
     border: 1px solid rgba(255,191,0,0.15);
@@ -1349,7 +1175,6 @@
     line-height: 1.6;
     margin-top: 16px;
   }
-
   /* ─── SUPPORT INFO GRID ──────────────────────────── */
   .support-info-grid {
     display: grid;
@@ -1362,7 +1187,6 @@
     border-radius: 20px;
     border: 1px solid var(--white-08);
   }
-
   .support-info-title {
     font-family: var(--font-display);
     font-weight: 800;
@@ -1371,42 +1195,33 @@
     letter-spacing: -0.3px;
     margin-bottom: 12px;
   }
-
   .support-info-body {
     font-size: 15px;
     color: var(--white-60);
     line-height: 1.6;
   }
-
   /* ─── RESPONSIVE ─────────────────────────────────── */
   @media (max-width: 768px) {
     nav { padding: 16px 20px; }
     .nav-links { display: none; }
-
     .hero h1 { font-size: 54px; }
     .hero-phones { display: none; }
-
     .steps-grid { grid-template-columns: 1fr; gap: 2px; }
     .step-card:first-child { border-radius: 16px 16px 0 0; }
     .step-card:last-child  { border-radius: 0 0 16px 16px; }
-
     .features-grid { grid-template-columns: 1fr; }
     .dual-grid { grid-template-columns: 1fr; }
     .dual-panel { padding: 40px 28px; }
-
     .faq-grid { grid-template-columns: 1fr; }
     .safety-grid { grid-template-columns: 1fr; }
     .support-cards { grid-template-columns: 1fr; }
     .legal-cards { grid-template-columns: 1fr; }
-
     footer { padding: 40px 20px; }
     .footer-grid { grid-template-columns: 1fr; gap: 32px; }
     .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
-
     .legal-page-header { padding: 16px 20px; }
     .legal-page-content { padding: 40px 20px 80px; }
     .legal-page-content h1 { font-size: 38px; }
-
     /* Wearable cards — single column on mobile */
     .wearable-cards-grid {
       grid-template-columns: 1fr;
@@ -1415,7 +1230,6 @@
     .wearable-card { padding: 32px 24px; }
     .wearable-card:first-child { border-radius: 16px 16px 0 0; }
     .wearable-card:last-child  { border-radius: 0 0 16px 16px; }
-
     /* Ring bonus — stack on mobile */
     .ring-bonus-grid {
       grid-template-columns: 1fr;
@@ -1423,7 +1237,6 @@
       padding: 32px 24px;
       border-radius: 16px;
     }
-
     /* Support info — stack on mobile */
     .support-info-grid {
       grid-template-columns: 1fr;
@@ -1432,7 +1245,6 @@
     }
     .support-info-title { font-size: 22px; }
   }
-
   /* Tablet — 2 cols for wearable cards */
   @media (min-width: 769px) and (max-width: 1024px) {
     .wearable-cards-grid {
@@ -1440,7 +1252,6 @@
     }
     .ring-bonus-grid { padding: 36px; gap: 32px; }
   }
-
   /* ─── MISC ───────────────────────────────────────── */
   .gradient-text {
     background: var(--grad);
@@ -1448,13 +1259,11 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-
   hr.divider {
     border: none;
     border-top: 1px solid var(--white-08);
     margin: 0;
   }
-
   .tag {
     display: inline-block;
     background: rgba(255,191,0,0.1);
@@ -1467,7 +1276,6 @@
     padding: 4px 12px;
     border-radius: 100px;
   }
-
   .apple-badge {
     display: inline-flex;
     align-items: center;
@@ -1482,7 +1290,6 @@
 </style>
 </head>
 <body>
-
 <!-- ════════════════════════════════════════════════ NAV -->
 <nav>
   <a href="#" class="nav-logo">
@@ -1499,25 +1306,20 @@
     <li><a href="https://apps.apple.com/app/id6760926366" class="nav-cta" target="_blank" rel="noopener">Download Free</a></li>
   </ul>
 </nav>
-
 <!-- ════════════════════════════════════════════════ HERO -->
 <section class="hero" id="home">
   <div class="hero-glow"></div>
-
   <div class="hero-badge">
     🏃 Free on the App Store · iPhone & iPad
   </div>
-
   <img src="data:image/png;base64,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" alt="Activate Fitness" style="width:96px;height:96px;border-radius:22px;margin-bottom:8px;box-shadow:0 0 40px rgba(230,92,20,0.35);">
   <h1>
     Move More.<br>
     <span class="gradient-text">Earn More.</span>
   </h1>
-
   <p class="hero-sub">
     Activate Fitness rewards kids with screen time for physical activity. Walk your steps, unlock your apps. Simple. Effective. Parent-controlled.
   </p>
-
   <div class="hero-actions">
     <a href="https://apps.apple.com/app/id6760926366" class="btn-primary" target="_blank" rel="noopener">
       ⬇ Download Free on iPhone
@@ -1526,7 +1328,6 @@
       See How It Works →
     </a>
   </div>
-
   <!-- Phone mockups -->
   <div class="hero-phones">
     <!-- Parent phone -->
@@ -1553,28 +1354,21 @@
         <div class="p-action-btn" style="color:rgba(100,200,100,0.8); border-color:rgba(100,200,100,0.2);">+ Add Bonus Time</div>
       </div>
     </div>
-
     <!-- Child phone (center) -->
     <div class="phone-mockup center">
       <div class="phone-screen center-screen">
         <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:11px; color:rgba(255,255,255,0.3); letter-spacing:1px; text-transform:uppercase;">Emma's Dashboard</div>
-
         <div class="p-steps-ring">
           <span class="p-ring-num">7,340</span>
           <span class="p-ring-label">steps today</span>
         </div>
-
         <div style="font-size:9px; color:rgba(255,255,255,0.4); text-align:center;">2,660 more steps to earn 30 more minutes!</div>
-
         <div class="p-balance-card">
           <div class="p-balance-num">45</div>
           <div class="p-balance-label">minutes earned today</div>
         </div>
-
         <div class="p-play-btn">▶</div>
-
         <div style="font-size:9px; color:rgba(255,255,255,0.5); text-align:center;">Hold to unlock screen time</div>
-
         <div class="p-stat-row">
           <div class="p-stat-item">
             <div class="p-stat-num" style="background:linear-gradient(90deg,#E51A0F,#FFBF00); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">1</div>
@@ -1591,7 +1385,6 @@
         </div>
       </div>
     </div>
-
     <!-- Shield phone -->
     <div class="phone-mockup">
       <div class="phone-screen" style="justify-content:center; align-items:center; gap:16px; text-align:center; background: #0a0a0a;">
@@ -1603,7 +1396,6 @@
       </div>
     </div>
   </div>
-
   <div style="margin-top:60px; display:flex; gap:24px; flex-wrap:wrap; justify-content:center;">
     <div class="apple-badge">🍎 Requires iOS 17+</div>
     <div class="apple-badge">❤️ Uses Apple HealthKit</div>
@@ -1612,9 +1404,7 @@
     <div class="apple-badge">💰 Free to Download</div>
   </div>
 </section>
-
 <hr class="divider">
-
 <!-- ════════════════════════════════════════════════ HOW IT WORKS -->
 <section id="how-it-works">
   <div class="container">
@@ -1623,7 +1413,6 @@
       <h2 class="section-title">How It<br><span class="gradient-text">Works</span></h2>
       <p class="section-subtitle">A simple loop that builds healthy habits without constant battles.</p>
     </div>
-
     <div class="steps-grid">
       <div class="step-card animate-on-scroll">
         <span class="step-number">01</span>
@@ -1632,7 +1421,6 @@
         <p class="step-desc">Create your account, add your child's profile, and set a daily step goal. Choose which apps to restrict when the balance hits zero — individual apps or whole categories like Games or Social Media.</p>
         <div class="step-accent"></div>
       </div>
-
       <div class="step-card animate-on-scroll">
         <span class="step-number">02</span>
         <div class="step-icon">📱</div>
@@ -1640,7 +1428,6 @@
         <p class="step-desc">Install Activate Fitness on your child's iPhone. Enter the 6-digit pairing code shown on your parent dashboard. Grant HealthKit and Screen Time access — and the system is live.</p>
         <div class="step-accent"></div>
       </div>
-
       <div class="step-card animate-on-scroll">
         <span class="step-number">03</span>
         <div class="step-icon">🏃</div>
@@ -1648,7 +1435,6 @@
         <p class="step-desc">The child's iPhone automatically tracks steps via Apple HealthKit throughout the day. When they reach their step goal, screen time is instantly added to their balance. Walk more, earn more.</p>
         <div class="step-accent"></div>
       </div>
-
       <div class="step-card animate-on-scroll">
         <span class="step-number">04</span>
         <div class="step-icon">🎮</div>
@@ -1659,9 +1445,7 @@
     </div>
   </div>
 </section>
-
 <hr class="divider">
-
 <!-- ════════════════════════════════════════════════ FEATURES -->
 <section id="features" style="background: var(--dark-2);">
   <div class="container">
@@ -1669,62 +1453,52 @@
       <span class="section-label">Features</span>
       <h2 class="section-title">Everything<br>Parents <span class="gradient-text">Need</span></h2>
     </div>
-
     <div class="features-grid animate-on-scroll">
       <div class="feature-card">
         <div class="feature-icon-wrap">📊</div>
         <h3 class="feature-title">Activity Goal Generator</h3>
         <p class="feature-desc">Not sure what step goal to set? Our built-in generator analyzes your child's age, activity level, and actual step history to recommend a personalized, achievable daily target.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon-wrap">🌙</div>
         <h3 class="feature-title">Scheduled Lockouts</h3>
         <p class="feature-desc">Set automatic bedtime and school hours lockouts. Apps are blocked on schedule regardless of screen time balance — no arguments, no exceptions. Weekday-only school mode included.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon-wrap">🎁</div>
         <h3 class="feature-title">Bonus Screen Time</h3>
         <p class="feature-desc">Reward great behavior, good grades, or completed chores with bonus minutes. Parents can add time directly from the dashboard anytime — it's your system to control.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon-wrap">📱</div>
         <h3 class="feature-title">App Restriction Picker</h3>
         <p class="feature-desc">Pick specific apps or entire Apple-defined categories like Games, Social Networking, or Entertainment. Categories auto-cover new apps your child downloads — no manual updates needed.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon-wrap">📈</div>
         <h3 class="feature-title">Activity History</h3>
         <p class="feature-desc">Both parents and kids can review daily step totals, goals completed, screen time earned, and overall progress over time. Transparency builds trust and motivation.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon-wrap">🔔</div>
         <h3 class="feature-title">Smart Notifications</h3>
         <p class="feature-desc">Kids get notified when they earn screen time, when their balance is running low, and when scheduled lockouts begin. Parents are alerted if Screen Time permissions are changed.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon-wrap">🔐</div>
         <h3 class="feature-title">Parent PIN Protection</h3>
         <p class="feature-desc">A required PIN protects all parent settings. Kids can't change goals, remove restrictions, or add time themselves. The parent dashboard stays locked on child devices.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon-wrap">📟</div>
         <h3 class="feature-title">Live Activity Widget</h3>
         <p class="feature-desc">A Lock Screen widget shows the real-time screen time countdown without unlocking the phone — so kids always know how much time is left at a glance.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon-wrap">⌚</div>
         <h3 class="feature-title">Wearable Support</h3>
         <p class="feature-desc">Supports Apple Watch, Fitbit, Garmin, Whoop, Oura, and more. Steps sync automatically through Apple Health. Apple Watch users unlock an exclusive Ring Bonus reward.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon-wrap">🔗</div>
         <h3 class="feature-title">Multi-Device Support</h3>
@@ -1733,9 +1507,7 @@
     </div>
   </div>
 </section>
-
 <hr class="divider">
-
 <!-- ════════════════════════════════════════════════ WEARABLES -->
 <section id="wearables" style="background: var(--dark-3);">
   <div class="container">
@@ -1744,9 +1516,7 @@
       <h2 class="section-title">Works With Your<br>Kid's <span class="gradient-text">Wearable</span></h2>
       <p class="section-subtitle">Activate Fitness works with the wearable your child already has. Steps sync automatically through Apple Health — no extra setup.</p>
     </div>
-
     <div class="wearable-cards-grid animate-on-scroll">
-
       <div class="wearable-card">
         <div class="wearable-card-accent"></div>
         <div class="wearable-card-icon">⌚</div>
@@ -1754,23 +1524,19 @@
         <p class="wearable-card-desc">Steps sync automatically through Apple Health. Apple Watch users also unlock the exclusive <strong style="color: var(--brand-gold);">Ring Bonus</strong> — close the Exercise ring and earn extra screen time, once per day.</p>
         <div class="wearable-badge-gold">⭐ Ring Bonus Available</div>
       </div>
-
       <div class="wearable-card">
         <div class="wearable-card-icon">🏃</div>
         <h3 class="wearable-card-title">Garmin, Whoop & Oura</h3>
         <p class="wearable-card-desc">These wearables sync steps and activity automatically to Apple Health. Once enabled in their companion app, Activate Fitness reads the data instantly — nothing extra for parents to configure.</p>
         <div class="wearable-badge-grey">✓ Auto-syncs via Apple Health</div>
       </div>
-
       <div class="wearable-card">
         <div class="wearable-card-icon">📲</div>
         <h3 class="wearable-card-title">Fitbit & Others</h3>
         <p class="wearable-card-desc">Fitbit doesn't sync to Apple Health natively, but works via the free <strong style="color: white;">Health Sync</strong> bridge app. Once set up, steps flow into Activate Fitness the same as any other wearable. Other wearables work the same way.</p>
         <div class="wearable-badge-grey">✓ Works via Health Sync bridge</div>
       </div>
-
     </div>
-
     <!-- Ring Bonus callout -->
     <div class="ring-bonus-grid animate-on-scroll">
       <div>
@@ -1790,7 +1556,6 @@
         </div>
       </div>
     </div>
-
     <!-- No wearable needed callout -->
     <div class="animate-on-scroll" style="margin-top: 24px; background: var(--dark-2); border: 1px solid var(--white-08); border-radius: 16px; padding: 24px 32px; display: flex; align-items: center; gap: 20px;">
       <div style="font-size: 32px; flex-shrink: 0;">📱</div>
@@ -1808,7 +1573,6 @@
       <h2 class="section-title">Built For<br>Both <span class="gradient-text">Sides</span></h2>
       <p class="section-subtitle">One app, two completely different experiences — built for parents and kids respectively.</p>
     </div>
-
     <div class="dual-grid animate-on-scroll">
       <div class="dual-panel parent">
         <div class="dual-tag">For Parents</div>
@@ -1824,7 +1588,6 @@
           <li><span class="check">✓</span>Receive alerts if permissions are changed</li>
         </ul>
       </div>
-
       <div class="dual-panel child">
         <div class="dual-tag">For Kids</div>
         <h3 class="dual-title">Get Moving,<br>Get Playing</h3>
@@ -1842,9 +1605,7 @@
     </div>
   </div>
 </section>
-
 <hr class="divider">
-
 <!-- ════════════════════════════════════════════════ FAQ -->
 <section id="faq">
   <div class="container">
@@ -1852,78 +1613,63 @@
       <span class="section-label">Questions</span>
       <h2 class="section-title">Frequently<br><span class="gradient-text">Asked</span></h2>
     </div>
-
     <div class="faq-grid animate-on-scroll">
       <div class="faq-item">
         <div class="faq-q">What devices does Activate Fitness work on?</div>
         <div class="faq-a">Activate Fitness requires iPhone running iOS 17 or later. Both the parent's device and the child's device need the app installed. The Screen Time API and HealthKit features require iOS 17+.</div>
       </div>
-
       <div class="faq-item">
         <div class="faq-q">How does step tracking work?</div>
         <div class="faq-a">We use Apple HealthKit to read your child's daily step count directly from their iPhone's built-in motion sensor. No additional hardware or wearable is needed. The step count syncs throughout the day automatically.</div>
       </div>
-
       <div class="faq-item">
         <div class="faq-q">Can my child bypass the app restrictions?</div>
         <div class="faq-a">Activate Fitness uses Apple's official Screen Time API — the same technology Apple uses in built-in parental controls. Like any parental control system, a determined child with the device passcode could potentially bypass it, which is why we recommend keeping passcodes private and using iOS's own Screen Time passcode as a secondary layer.</div>
       </div>
-
       <div class="faq-item">
         <div class="faq-q">What happens to screen time at midnight?</div>
         <div class="faq-a">Screen time balances reset to zero at midnight each day. Any unused minutes do not carry over. Step counts also reset daily. This encourages consistent daily activity rather than banking time.</div>
       </div>
-
       <div class="faq-item">
         <div class="faq-q">What if my child walks a lot but I want to cap their total screen time?</div>
         <div class="faq-a">You can use the activity goal generator to set a "max daily screen time" — this is used to calculate how many minutes per goal your child earns, effectively setting an implicit cap. You can also use Scheduled Lockouts to enforce hard cutoffs at bedtime regardless of remaining balance.</div>
       </div>
-
       <div class="faq-item">
         <div class="faq-q">Can I manage more than one child?</div>
         <div class="faq-a">Yes. You can add multiple children to your parent account, each with their own step goals, app restrictions, schedules, and paired device. Each child's settings and balance are completely independent.</div>
       </div>
-
       <div class="faq-item">
         <div class="faq-q">How do I delete my account or my child's data?</div>
         <div class="faq-a">You can delete a child's profile directly from the app, and you can delete your entire parent account and all associated data in-app from your Account settings ("Delete Account") — removal from our servers completes within 30 days. Prefer email? Contact us at <a href="mailto:andrew.armour@activatefitnessapp.com">andrew.armour@activatefitnessapp.com</a> and we'll process the request for you. We comply with COPPA and honor all deletion requests promptly.</div>
       </div>
-
       <div class="faq-item">
         <div class="faq-q">Is Activate Fitness free?</div>
         <div class="faq-a">Yes, Activate Fitness is currently completely free to download and use. If paid features are introduced in the future, you will receive at least 30 days advance notice and can choose whether to upgrade. No charges without your explicit consent.</div>
       </div>
-
       <div class="faq-item">
         <div class="faq-q">What if the Screen Time permission gets revoked?</div>
         <div class="faq-a">If your child (or anyone else) revokes the Screen Time permission from within iOS Settings, the app can no longer enforce restrictions. You'll receive a push notification alerting you, so you can restore the permission. We recommend keeping your iOS Screen Time passcode enabled as an additional safeguard.</div>
       </div>
-
       <div class="faq-item">
         <div class="faq-q">Does the app work during bedtime or school hours?</div>
         <div class="faq-a">During scheduled lockout windows (bedtime or school hours), apps are blocked regardless of your child's screen time balance. The lockout screen explains why apps are blocked and when they'll be accessible again. Lockouts are enforced by iOS at the system level.</div>
       </div>
-
       <div class="faq-item">
         <div class="faq-q">How do I unpair a device?</div>
         <div class="faq-a">You can unpair a device from the child's profile in your parent dashboard. After unpairing, the child's device returns to normal — all app restrictions are lifted and the app can be deleted. Parent verification (PIN) is required to unpair.</div>
       </div>
-
       <div class="faq-item">
         <div class="faq-q">Does Activate Fitness sell data or show ads?</div>
         <div class="faq-a">Absolutely not. We do not sell any data, run ads, or use behavioral tracking of any kind — especially for children's data. Activate Fitness is funded entirely by the App Store and optional future premium features. Read our <a href="#" onclick="openLegal('privacy')">Privacy Policy</a> for full details.</div>
       </div>
-
       <div class="faq-item">
         <div class="faq-q">How do I add the Home Screen widget?</div>
         <div class="faq-a">Long press on your Home Screen until the apps start wiggling, tap the "+" button in the top left corner, search for "Activate Fitness", and choose the Medium size. This widget shows your Screen Time balance and step progress at a glance — no need to open the app! The widget tutorial also appears automatically after pairing setup.</div>
       </div>
-
       <div class="faq-item">
         <div class="faq-q">How do I delete the app from my child's device?</div>
         <div class="faq-a">When parental controls are active, iOS prevents the app from being deleted to protect your child's restrictions. To delete the app: open Activate Fitness on the child's device, tap the gear icon, select "Unpair This Device", and enter your parent PIN. Once unpaired, all restrictions are lifted and the app can be deleted normally from the Home Screen.</div>
       </div>
-
       <div class="faq-item">
         <div class="faq-q">Can my child delete the app to bypass restrictions?</div>
         <div class="faq-a">No. While parental controls are active, Activate Fitness uses Apple's denyAppRemoval feature to prevent the app from being deleted. The "Delete App" option is grayed out on the child's device. Only a parent with the PIN can unpair the device and allow deletion. This ensures your child's restrictions remain in place.</div>
@@ -1931,9 +1677,7 @@
     </div>
   </div>
 </section>
-
 <hr class="divider">
-
 <!-- ════════════════════════════════════════════════ PRIVACY & SAFETY -->
 <section id="privacy-safety">
   <div class="container">
@@ -1942,38 +1686,32 @@
       <h2 class="section-title">Privacy &<br><span class="gradient-text">Safety</span></h2>
       <p class="section-subtitle">Built from the ground up with children's privacy and COPPA compliance as core requirements.</p>
     </div>
-
     <div class="safety-grid animate-on-scroll">
       <div class="safety-card">
         <div class="safety-icon">🛡️</div>
         <h3 class="safety-title">COPPA Compliant</h3>
         <p class="safety-desc">We comply fully with the Children's Online Privacy Protection Act. We obtain verifiable parental consent before collecting any data from children under 13. Parents control everything.</p>
       </div>
-
       <div class="safety-card">
         <div class="safety-icon">❤️</div>
         <h3 class="safety-title">HealthKit Stays Private</h3>
         <p class="safety-desc">Raw HealthKit samples never leave your child's device. We sync only a single derived number — the day's step total — so paired devices and your dashboard show the same progress. No workouts, heart rate, or other health records are ever collected.</p>
       </div>
-
       <div class="safety-card">
         <div class="safety-icon">🚫</div>
         <h3 class="safety-title">Zero Ads. Zero Tracking.</h3>
         <p class="safety-desc">We use no advertising networks, no behavioral tracking pixels, no cross-site tracking. Children's data is never sold, shared with third parties for marketing, or used for advertising purposes.</p>
       </div>
-
       <div class="safety-card">
         <div class="safety-icon">🔐</div>
         <h3 class="safety-title">Encrypted & Secure</h3>
         <p class="safety-desc">All data is stored securely using Google Firebase with encryption at rest and in transit. Passwords are hashed and never stored in plain text. Account access requires parent email + PIN.</p>
       </div>
-
       <div class="safety-card">
         <div class="safety-icon">🗑️</div>
         <h3 class="safety-title">Right to Delete</h3>
         <p class="safety-desc">Parents can delete any child profile from the app at any time. All associated data is permanently removed within 30 days. Full account deletion available on request — no questions asked.</p>
       </div>
-
       <div class="safety-card">
         <div class="safety-icon">🍎</div>
         <h3 class="safety-title">Apple Framework Only</h3>
@@ -1982,9 +1720,7 @@
     </div>
   </div>
 </section>
-
 <hr class="divider">
-
 <!-- ════════════════════════════════════════════════ LEGAL -->
 <section id="legal" style="background: var(--dark-2);">
   <div class="container">
@@ -1993,26 +1729,27 @@
       <h2 class="section-title">Privacy &<br><span class="gradient-text">Terms</span></h2>
       <p class="section-subtitle">Transparent, plain-language policies. We explain what we do and why — no legalese.</p>
     </div>
-
     <div class="legal-cards animate-on-scroll">
       <div class="legal-card">
         <h3 class="legal-card-title">Privacy Policy</h3>
-        <p class="legal-card-date">Last Updated: July 14, 2026</p>
+        <!-- UPDATED 7/15/26: Date bump + Active Mode highlight (adult self-use rev) -->
+        <p class="legal-card-date">Last Updated: July 15, 2026</p>
         <p class="legal-card-summary">We collect minimal data, only what's needed to run the app. Raw HealthKit data stays on-device — only daily step totals sync. No advertising. No selling data. Full COPPA compliance.</p>
         <div class="legal-highlights">
           <div class="legal-highlight">We only collect step count — not health records</div>
           <div class="legal-highlight">Children's data never sold or shared with advertisers</div>
           <div class="legal-highlight">Raw HealthKit data never leaves the device — only daily step totals sync</div>
           <div class="legal-highlight">COPPA & GDPR compliant</div>
+          <div class="legal-highlight">Adult self-use (Active Mode) covered — same no-sale, no-ads rules</div>
           <div class="legal-highlight">Full deletion rights — anytime, no questions</div>
           <div class="legal-highlight">App deletion prevented on child devices (parental control)</div>
         </div>
         <a href="#" class="btn-outline" onclick="openLegal('privacy')">Read Full Privacy Policy</a>
       </div>
-
       <div class="legal-card">
         <h3 class="legal-card-title">Terms of Service</h3>
-        <p class="legal-card-date">Last Updated: July 14, 2026</p>
+        <!-- UPDATED 7/15/26: Date bump + Active Mode highlight (adult self-use rev) -->
+        <p class="legal-card-date">Last Updated: July 15, 2026</p>
         <p class="legal-card-summary">Plain-language terms covering how the app works, parental responsibilities, limitations of the technology, and what you can expect from us.</p>
         <div class="legal-highlights">
           <div class="legal-highlight">App requires iOS 17+ and parental setup</div>
@@ -2020,6 +1757,7 @@
           <div class="legal-highlight">Parents responsible for appropriate use</div>
           <div class="legal-highlight">App deletion prevented on child devices (parental control)</div>
           <div class="legal-highlight">Screen Time resets to zero at midnight daily</div>
+          <div class="legal-highlight">Adult Active Mode is a voluntary, revocable commitment tool</div>
           <div class="legal-highlight">No warranty on 100% restriction accuracy (iOS limitation)</div>
           <div class="legal-highlight">Governed by Indiana law</div>
         </div>
@@ -2039,9 +1777,7 @@
     </div>
   </div>
 </section>
-
 <hr class="divider">
-
 <!-- ════════════════════════════════════════════════ SUPPORT -->
 <section id="support">
   <div class="container">
@@ -2050,7 +1786,6 @@
       <h2 class="section-title">Support &<br><span class="gradient-text">Contact</span></h2>
       <p class="section-subtitle">Questions, issues, or feedback — we're here to help.</p>
     </div>
-
     <div class="support-cards animate-on-scroll">
       <div class="support-card">
         <div class="support-card-icon">✉️</div>
@@ -2058,14 +1793,12 @@
         <p class="support-card-desc">Reach out directly for help with setup, technical issues, account questions, data deletion requests, or anything else.</p>
         <a href="mailto:andrew.armour@activatefitnessapp.com" class="support-link">andrew.armour@activatefitnessapp.com</a>
       </div>
-
       <div class="support-card">
         <div class="support-card-icon">❓</div>
         <h3 class="support-card-title">FAQ</h3>
         <p class="support-card-desc">Find answers to the most common questions about setup, pairing, screen time, restrictions, data, and more.</p>
         <a href="#faq" class="support-link">Browse All FAQs →</a>
       </div>
-
       <div class="support-card">
         <div class="support-card-icon">🗑️</div>
         <h3 class="support-card-title">Delete Your Data</h3>
@@ -2073,7 +1806,6 @@
         <a href="mailto:andrew.armour@activatefitnessapp.com?subject=Account%20Deletion%20Request" class="support-link">Request Deletion →</a>
       </div>
     </div>
-
     <div class="support-info-grid animate-on-scroll">
       <div>
         <h3 class="support-info-title">Response Time</h3>
@@ -2086,9 +1818,7 @@
     </div>
   </div>
 </section>
-
 <hr class="divider">
-
 <!-- ════════════════════════════════════════════════ DOWNLOAD CTA -->
 <section class="cta-section" id="download">
   <div style="max-width:700px; margin:0 auto;">
@@ -2103,7 +1833,6 @@
     <p style="margin-top:24px; font-size:13px; color:rgba(255,255,255,0.3);">Requires iPhone · iOS 17 or later · Free</p>
   </div>
 </section>
-
 <!-- ════════════════════════════════════════════════ FOOTER -->
 <footer>
   <div class="footer-grid">
@@ -2114,7 +1843,6 @@
       </div>
       <p>Turn physical activity into screen time. A healthier relationship with technology — for the whole family.</p>
     </div>
-
     <div class="footer-col">
       <div class="footer-col-title">Product</div>
       <ul>
@@ -2125,7 +1853,6 @@
         <li><a href="https://apps.apple.com/app/id6760926366" target="_blank" rel="noopener">Download</a></li>
       </ul>
     </div>
-
     <div class="footer-col">
       <div class="footer-col-title">Help</div>
       <ul>
@@ -2134,7 +1861,6 @@
         <li><a href="mailto:andrew.armour@activatefitnessapp.com?subject=Account%20Deletion%20Request">Delete My Data</a></li>
       </ul>
     </div>
-
     <div class="footer-col">
       <div class="footer-col-title">Legal</div>
       <ul>
@@ -2145,13 +1871,11 @@
       </ul>
     </div>
   </div>
-
   <div class="footer-bottom">
     <p>© 2026 ATA IT Services, LLC dba Activate Fitness · All rights reserved.</p>
     <p>Made with ❤️ for families</p>
   </div>
 </footer>
-
 <!-- ════════════════════════════════════════════════ PRIVACY POLICY PAGE -->
 <div class="legal-page" id="privacy-page">
   <div class="legal-page-header">
@@ -2160,16 +1884,15 @@
   </div>
   <div class="legal-page-content">
     <h1>Privacy<br>Policy</h1>
-    <p class="last-updated">Effective Date: June 9, 2026 · Last Modified: July 14, 2026</p>
-
+    <!-- UPDATED 7/15/26: Active Mode (adult self-use) revision — new §5A, generalized §3, expanded §1 -->
+    <p class="last-updated">Effective Date: June 9, 2026 · Last Modified: July 15, 2026</p>
     <div class="legal-highlight-box">
-      <p><strong>For Parents:</strong> Activate Fitness is designed for use by children under parental supervision. We comply with COPPA and do not collect personal information from children under 13 without verifiable parental consent. We do NOT sell data, use tracking, or show ads.</p>
+      <p><strong>For Parents:</strong> Activate Fitness is designed for use by children under parental supervision. We comply with COPPA and do not collect personal information from children under 13 without verifiable parental consent. We do NOT sell data, use tracking, or show ads. <strong>Adults using Active Mode for themselves:</strong> see Section 1 ("Use by adults for themselves") and Section 5A.</p>
     </div>
-
     <h2>1. Introduction</h2>
     <p>This Privacy Policy describes how <strong>ATA IT Services, LLC</strong>, an Indiana limited liability company doing business as Activate Fitness ("Activate Fitness," "we," "us," or "our"), collects, uses, discloses, and protects information when you and your child use the Activate Fitness mobile application (the "App") and the website at activatefitnessapp.com (the "Site") (collectively, the "Service").</p>
     <p><strong>Activate Fitness is designed for parents to set up and supervise their children.</strong> The App rewards a child's physical activity (steps and exercise) with screen time on the child's Apple device, using Apple's Screen Time and HealthKit frameworks.</p>
-    <p>Because the App is used by children, we comply with the Children's Online Privacy Protection Act of 1998 ("COPPA"), Apple's Kids Category requirements, and other applicable child-privacy laws. We do NOT sell, rent, share for cross-context behavioral advertising, or otherwise monetize personal information about children or parents.</p> <p><strong>Use by adults for themselves.</strong> Activate Fitness may also be used by an adult to earn their own screen time through activity, without managing a child. When you use the App for yourself, you are the account holder and the subject of the activity and screen-time data your own profile generates, and we process it under the same minimal-collection, no-sale, no-advertising practices described in this Policy. The children's provisions in Section 5 apply only to child profiles you create; the general provisions of this Policy apply to your own use.</p>
+    <p>Because the App is used by children, we comply with the Children's Online Privacy Protection Act of 1998 ("COPPA"), Apple's Kids Category requirements, and other applicable child-privacy laws. We do NOT sell, rent, share for cross-context behavioral advertising, or otherwise monetize personal information about children or parents.</p> <p><strong>Use by adults for themselves ("Active Mode").</strong> Activate Fitness may also be used by an adult account holder to earn their own screen time through physical activity, without managing a child. Every account is an Admin account; an adult account holder may create a single self profile and switch their device into Active Mode, in which the App tracks the account holder's own activity and enforces the account holder's own screen-time rules. When you use the App for yourself, you are both the account holder and the data subject: the profile, activity, screen-time, and device information described in Section 3 is collected about you rather than about a child, and we process it under the same minimal-collection, no-sale, no-advertising practices described in this Policy. The children's provisions in Section 5 apply only to child profiles you create; Section 5A explains how Active Mode is limited to adults.</p>
     <h2>2. Who We Are</h2>
     <ul>
       <li><strong>Legal entity:</strong> ATA IT Services, LLC (Indiana)</li>
@@ -2179,23 +1902,21 @@
       <li><strong>Phone:</strong> +1 (317) 604-9554</li>
       <li><strong>Address:</strong> 1869 S Philadelphia Pass, New Palestine, IN 46163</li>
     </ul>
-
     <h2>3. Information We Collect</h2>
-
     <h3>A. From Parents (Account Information)</h3>
     <ul>
       <li>Email address and password (or Sign In with Apple identifiers)</li>
       <li>Parental consent records: timestamp, age category, App version, consent method</li>
       <li>Any information you voluntarily send via support email</li>
     </ul>
-
     <h3>B. About Profiles You Create (Children, or Yourself)</h3>
     <ul>
-      <li>Child first name (or nickname) and date of birth or age</li>
+      <!-- UPDATED 7/15/26: Bullets generalized for self profiles; self-profile designation disclosed -->
+      <li>Profile first name (or nickname) and date of birth or age — the child's for a child profile, or your own for a self profile</li>
       <li>Optional profile photo, stored in Google Cloud Storage</li>
-      <li>Parent-configured settings: step goals, minutes per goal, daily max, schedules, restricted apps/categories, wearable selection</li>
+      <li>A self-profile designation (a flag marking a profile as belonging to the adult account holder rather than to a child)</li>
+      <li>Admin-configured settings: step goals, minutes per goal, daily max, schedules, restricted apps/categories, wearable selection</li>
     </ul>
-
     <h3>C. Health & Activity Data (Apple HealthKit)</h3>
     <ul>
       <li>Daily step count from the device or paired wearable</li>
@@ -2203,27 +1924,24 @@
       <li>Source identifiers used to filter trusted sources and prevent manipulation</li>
     </ul>
     <div class="legal-highlight-box">
-      <p><strong>Important:</strong> Raw HealthKit samples are NOT transmitted off the device. We only transmit derived aggregate values (e.g., "today's step total") to our backend so paired devices and the parent dashboard can display the same number. We do not share Health Data with any third party, do not use it for advertising, and do not disclose it to data brokers.</p>
+      <p><strong>Important:</strong> Raw HealthKit samples are NOT transmitted off the device. We only transmit derived aggregate values (e.g., "today's step total") to our backend so paired devices and the Admin dashboard can display the same number. For a self profile, this data is about you, the account holder. We do not share Health Data with any third party, do not use it for advertising, and do not disclose it to data brokers.</p>
     </div>
-
     <h3>D. Screen Time & App-Usage Data</h3>
     <ul>
       <li>FamilyActivitySelection tokens (opaque — cannot be linked to specific apps by us; Apple's framework prevents that)</li>
       <li>DeviceActivity event counts for enforcing restrictions</li>
       <li>Screen-time balance, session times, and pause/resume events</li>
-      <li>Wearable exception requests submitted by your child, including an optional short message (e.g., "charging my watch"), shown to you for approval</li>
+      <li>Wearable exception requests submitted by your child, including an optional short message (e.g., "charging my watch"), shown to you for approval (child profiles only)</li>
     </ul>
-
     <h3>E. Device & Technical Information</h3>
     <ul>
       <li>Device identifier for vendor (identifierForVendor) — for pairing only</li>
       <li>Firebase Cloud Messaging push token — for notifications only</li>
       <li>App version, OS version, and approximate time zone</li>
       <li>Paired device name (e.g., "Emma's iPhone") and last-active timestamp — shown in your dashboard so you can manage paired devices</li>
-      <li>Anonymous Firebase Authentication UID for child devices</li>
+      <li>Anonymous Firebase Authentication UID for paired child devices; a self profile operates under your own authenticated account</li>
       <li>Crash reports via Firebase Crashlytics — enabled only after you grant consent during setup; includes device model, OS version, and technical crash details. Used solely to diagnose and fix bugs, never for advertising or profiling</li>
     </ul>
-
     <h3>F. What We Do NOT Collect</h3>
     <ul>
       <li>NO precise location, GPS, contacts, browsing history, or social-media data</li>
@@ -2231,7 +1949,6 @@
       <li>NO third-party analytics SDKs that profile users</li>
       <li>NO advertising SDKs of any kind</li>
     </ul>
-
     <h2>4. How We Use Information</h2>
     <p>We use information only to:</p>
     <ol>
@@ -2243,7 +1960,6 @@
       <li>Comply with legal obligations and enforce our Terms of Service</li>
     </ol>
     <p>We do NOT use any information for behavioral advertising, profiling, automated decision-making, or sale to third parties.</p>
-
     <h2>5. Children's Privacy (COPPA Notice)</h2>
     <p>In compliance with COPPA:</p>
     <ul>
@@ -2262,7 +1978,9 @@
       <li>Revoke consent at any time</li>
     </ul>
     <p>Use the in-App deletion control, unpair the child device, or email andrew.armour@activatefitnessapp.com. We respond within 30 days.</p>
-
+    <!-- ADDED 7/15/26: §5A — COPPA firewall around Active Mode (adults-only) -->
+    <h3>5A. Active Mode Is Adults-Only</h3>
+    <p>Self profiles and Active Mode are available only to adult account holders. The "For Myself" option is age-gated and is not offered to accounts that indicated a non-adult age during setup. A child cannot be enrolled in Active Mode, and a self profile is never treated as a child profile. Creating a self profile does not reduce or alter any COPPA protection that applies to the child profiles on your account, and your self profile's data is not combined with any child's data.</p>
     <h2>6. Data Sharing</h2>
     <p>We do NOT sell personal information. We share data only with:</p>
     <ul>
@@ -2271,7 +1989,6 @@
       <li><strong>Legal requirements:</strong> If required by law, court order, or to protect rights, property, or safety</li>
       <li><strong>Business transfers:</strong> In connection with a merger, acquisition, or sale of assets — with prior notice to you</li>
     </ul>
-
     <h2>7. Apple HealthKit Disclosure</h2>
     <p>We comply with Apple's HealthKit terms:</p>
     <ul>
@@ -2283,7 +2000,6 @@
     <p>The Home Screen widget and Lock Screen Live Activity read from local device storage only — no network requests are made.</p>
     <h3>App Deletion Prevention</h3>
     <p>While parental controls are active, iOS prevents the app from being deleted (Apple's denyAppRemoval). Parents can unpair the device (requires PIN) to allow deletion.</p>
-
     <h2>8. California Residents — CCPA / CPRA</h2>
     <p>If you are a California resident, the CCPA grants you the following rights:</p>
     <ul>
@@ -2295,32 +2011,26 @@
       <li><strong>Right to non-discrimination</strong> for exercising any of these rights</li>
     </ul>
     <p>Email andrew.armour@activatefitnessapp.com with subject "California Privacy Request." We respond within 45 days.</p>
-
     <h2>9. Other U.S. State Privacy Rights</h2>
     <p>Residents of Virginia, Colorado, Connecticut, Utah, Texas, Oregon, Montana, and other states with comprehensive privacy laws have similar rights. We do not engage in sale, targeted advertising, or profiling. Contact us at the email above.</p>
-
     <h2>10. International Users (GDPR)</h2>
     <p>If you are in the EEA, UK, or Switzerland, our legal bases for processing are: performance of a contract, consent, legal obligation, and legitimate interests. You have the right to withdraw consent, lodge complaints with your supervisory authority, and object to processing.</p>
-
     <h2>11. Data Retention & Deletion</h2>
     <ul>
       <li><strong>Active accounts:</strong> retained while active</li>
-      <li><strong>Child profiles:</strong> until parent deletes the child or account</li>
+      <!-- UPDATED 7/15/26: Retention bullet covers self profiles -->
+      <li><strong>Child and self profiles:</strong> until the account holder deletes the profile or the account</li>
       <li><strong>Activity data:</strong> rolling 365-day retention</li>
       <li><strong>Consent records:</strong> retained while your account is active; deleted when you delete your account</li>
       <li><strong>Backups:</strong> up to 30 days</li>
     </ul>
     <p>We retain each category of information only as long as reasonably necessary for the purposes described in Section 4, and never indefinitely. When you delete your account, we delete all child profiles, activity records, consent records, tokens, photos, and auth records.</p>
-
     <h2>12. Security</h2>
     <p>We use TLS 1.2+ encryption in transit, encryption at rest in Firebase, row-level security rules, and restricted backend access. No system is 100% secure. If we become aware of a breach, we notify affected users and authorities as required by law.</p>
-
     <h2>13. Cookies & Tracking</h2>
     <p>The App does not use cookies. The Site uses only essential cookies. We do not use advertising cookies, analytics that profile users, or cross-site tracking.</p>
-
     <h2>14. Changes to This Policy</h2>
     <p>When we make material changes, we will post the updated Policy with a new date, notify you by email, and — for changes expanding children's data collection — obtain new parental consent as required by COPPA.</p>
-
     <h2>15. Contact Us</h2>
     <p><strong>ATA IT Services, LLC</strong> dba Activate Fitness</p>
     <p><strong>Email:</strong> andrew.armour@activatefitnessapp.com<br>
@@ -2329,7 +2039,6 @@
     <p>We respond to all privacy requests within 30 days.</p>
   </div>
 </div>
-
 <!-- ════════════════════════════════════════════════ TERMS OF SERVICE PAGE -->
 <div class="legal-page" id="terms-page">
   <div class="legal-page-header">
@@ -2338,45 +2047,51 @@
   </div>
   <div class="legal-page-content">
     <h1>Terms of<br>Service</h1>
-    <p class="last-updated">Effective Date: June 9, 2026 · Last Modified: July 14, 2026</p>
-
+    <!-- UPDATED 7/15/26: Active Mode (adult self-use) revision — new §7A, updated §2/§4/§8/§9 -->
+    <p class="last-updated">Effective Date: June 9, 2026 · Last Modified: July 15, 2026</p>
     <div class="legal-highlight-box">
       <p><strong>Notice:</strong> Section 15 contains a binding individual-arbitration clause and class-action waiver. You may opt out within 30 days of accepting these Terms.</p>
     </div>
-
     <h2>1. Agreement to Terms</h2>
     <p>These Terms of Service ("Terms") form a binding contract between you and <strong>ATA IT Services, LLC</strong>, an Indiana limited liability company doing business as Activate Fitness ("Activate Fitness," "we," "us," or "our"). By creating an account, downloading the App, or using the Service, you accept these Terms and our Privacy Policy.</p>
-
     <h2>2. Who Can Use the Service</h2>
     <ul>
       <li>Parents/guardians must be at least 18 years old and have legal authority over each child added</li>
       <li>Children may only use the Service under direct parental supervision, on devices paired by a parent</li>
       <li>Children may not create independent accounts</li>
+      <!-- ADDED 7/15/26: Adult self-use eligibility (Active Mode) -->
+      <li>Adults (18 or older) may also use the Service for themselves through a single self profile ("Active Mode"); a self profile may be used only by the account holder — see Section 7A</li>
     </ul>
-
     <h2>3. Account Security</h2>
     <p>You agree to provide accurate information, keep your password and PIN confidential, notify us immediately of compromise, and prevent the child from learning the PIN or Screen-Time passcode. You are responsible for all account activity.</p>
-
     <h2>4. Description of the Service</h2>
-    <p>Activate Fitness rewards children's physical activity with screen time using Apple's HealthKit, FamilyControls, DeviceActivity, and ManagedSettings frameworks. Features include widgets, Live Activities, bonus rewards, wearable support, scheduled restrictions, multi-device pairing, activity history, and push notifications. We reserve the right to add, modify, or remove features. Screen time balance resets to zero at midnight daily — unused minutes do not carry over. Activate Fitness may be used by a parent to manage children, or by an adult to earn their own screen time; for adult self-use, screen-time restrictions rely on Apple's individual Screen Time authorization, which the device owner can revoke in iOS Settings, so the App functions as a commitment tool rather than an unbreakable lock.</p>
-
+    <!-- UPDATED 7/15/26: Replaced run-on adult self-use sentence with pointer to dedicated §7A -->
+    <p>Activate Fitness rewards children's physical activity with screen time using Apple's HealthKit, FamilyControls, DeviceActivity, and ManagedSettings frameworks. Features include widgets, Live Activities, bonus rewards, wearable support, scheduled restrictions, multi-device pairing, activity history, and push notifications. We reserve the right to add, modify, or remove features. Screen time balance resets to zero at midnight daily — unused minutes do not carry over. Activate Fitness may be used by a parent to manage children, or by an adult account holder to earn their own screen time through a self profile ("Active Mode"). Adult self-use is governed by Section 7A.</p>
     <h2>5. License Grant</h2>
     <p>ATA IT Services, LLC grants you a limited, non-exclusive, non-transferable, non-sublicensable, revocable license to use the App for personal, non-commercial family use.</p>
-
     <h2>6. Apple Notice</h2>
     <p>These Terms are between you and Activate Fitness, not Apple Inc. Apple has no obligation to maintain or support the App. Activate Fitness is solely responsible for warranties, product liability, legal compliance, and intellectual property claims. Apple and its subsidiaries are third-party beneficiaries of these Terms.</p>
-
     <h2>7. Parental Supervision</h2>
     <p>The parent is solely responsible for setting appropriate goals and caps, choosing restricted apps, maintaining passcodes, and monitoring the child's activity for safety. <strong>Activate Fitness does not supervise or monitor children.</strong></p>
-
+    <!-- ADDED 7/15/26: §7A — Adult Self-Use (Active Mode). Numbered 7A to avoid
+         renumbering §8-§19, which would break the §13 survival cross-references. -->
+    <h2>7A. Adult Self-Use (Active Mode)</h2>
+    <p>If you create a self profile and use Active Mode, the following additional terms apply:</p>
+    <ul>
+      <li><strong>Adults only.</strong> You represent that you are at least 18 years old and that your self profile will be used only by you. Each account is limited to one self profile.</li>
+      <li><strong>Voluntary commitment tool.</strong> Active Mode restrictions rely on Apple's individual Screen Time authorization, which you — as the device owner — may revoke at any time in iOS Settings. Active Mode is a voluntary commitment tool, not an unbreakable lock, and we make no warranty that your self-imposed restrictions cannot be removed or bypassed by you.</li>
+      <li><strong>Mode switching.</strong> Switching from Active Mode back to Admin Mode pauses — it does not forfeit — any running screen-time session. Certain restrictions may intentionally remain in effect in Admin Mode to preserve the integrity of the commitment feature.</li>
+      <li><strong>Ending enforcement.</strong> Deleting your self profile, revoking Screen Time authorization, or deleting the App ends enforcement of your self-imposed restrictions.</li>
+      <li><strong>Scope.</strong> Section 7 (Parental Supervision) and the children's privacy provisions do not apply to your self profile. All other Terms — including Sections 8, 9, 14, and 15 — apply in full.</li>
+    </ul>
     <h2>8. Medical Disclaimer</h2>
     <div class="legal-highlight-box">
-      <p><strong>ACTIVATE FITNESS IS NOT A MEDICAL DEVICE, NOT MEDICAL ADVICE, AND NOT INTENDED TO DIAGNOSE, TREAT, CURE, OR PREVENT ANY DISEASE.</strong> Step counts may be inaccurate. Consult your child's physician before starting any activity program.</p>
+      <!-- UPDATED 7/15/26: Disclaimer now addresses adult self-users as well -->
+      <p><strong>ACTIVATE FITNESS IS NOT A MEDICAL DEVICE, NOT MEDICAL ADVICE, AND NOT INTENDED TO DIAGNOSE, TREAT, CURE, OR PREVENT ANY DISEASE.</strong> Step counts may be inaccurate. Consult your physician — or your child's physician — before starting any activity program.</p>
     </div>
-
     <h2>9. Acceptable Use</h2>
-    <p>You agree not to: violate any law; bypass parental controls or activity verification; submit false step data; reverse engineer the App; use automated access; sell, redistribute, or sublicense the App; impersonate anyone; or overburden our systems. Violations may result in account termination.</p>
-
+    <!-- UPDATED 7/15/26: "bypass parental controls" scoped to child devices (adults may lawfully revoke their own Screen Time authorization per §7A) -->
+    <p>You agree not to: violate any law; bypass parental controls on a child device; circumvent activity verification; submit false step data; reverse engineer the App; use automated access; sell, redistribute, or sublicense the App; impersonate anyone; or overburden our systems. Violations may result in account termination.</p>
     <h2>10. Intellectual Property & Patent Notice</h2>
     <p>The Service is owned by ATA IT Services, LLC and protected by U.S. and international intellectual property laws. "Activate Fitness" and its logo are trademarks of ATA IT Services, LLC.</p>
     <h3>Patent Notice (35 U.S.C. § 287(a))</h3>
@@ -2385,30 +2100,23 @@
       <li><strong>U.S. Patent No. 11,660,504 B2</strong> — "Fitness based control of communication device" (issued May 30, 2023; inventor Andrew Armour)</li>
     </ul>
     <p>Additional patents may be pending. See <a href="#" onclick="openLegal('patents')" style="color: var(--brand-gold);">activatefitnessapp.com/patents</a> for the current list.</p>
-
     <h2>11. Third-Party Services</h2>
     <p>The Service uses Apple iOS, HealthKit, FamilyControls, DeviceActivity, ManagedSettings, APNs, the App Store, and Google Firebase. Your use of those platforms is governed by their own terms. Wearables (Garmin, Whoop, Oura, Fitbit) are independent products.</p>
-
     <h2>12. Payments (Reserved)</h2>
     <p>The Service is currently free. We may offer paid features in the future with at least 30 days' notice. No charges without your explicit consent.</p>
-
     <h2>13. Termination</h2>
     <p>You may terminate by using the in-App deletion control or emailing us. We may suspend or terminate for breach, legal requirement, or discontinuation. Sections 8, 10, 14, 15, and 16 survive termination.</p>
-
     <h2>14. Disclaimers & Limitation of Liability</h2>
     <p><strong>THE SERVICE IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND.</strong> We do not warrant uninterrupted or error-free operation, accurate step counts, or that restrictions cannot be bypassed.</p>
     <p><strong>TO THE FULLEST EXTENT PERMITTED BY LAW, ATA IT SERVICES, LLC'S TOTAL LIABILITY WILL NOT EXCEED THE GREATER OF $50 OR THE AMOUNT YOU PAID US IN THE 12 MONTHS PRECEDING THE CLAIM.</strong></p>
-
     <h2>15. Dispute Resolution — Arbitration & Class-Action Waiver</h2>
     <p><strong>15.1 Informal Resolution.</strong> Before filing arbitration, contact andrew.armour@activatefitnessapp.com. We will try to resolve the dispute within 60 days.</p>
     <p><strong>15.2 Binding Arbitration.</strong> Unresolved disputes will be resolved by binding individual arbitration under AAA Consumer Arbitration Rules, in Hancock County, Indiana (or your county, or remotely).</p>
     <p><strong>15.3 Class-Action Waiver.</strong> YOU AND ATA IT SERVICES, LLC AGREE THAT EACH MAY BRING CLAIMS ONLY ON AN INDIVIDUAL BASIS AND NOT AS A CLASS MEMBER.</p>
     <p><strong>15.4 Exceptions.</strong> Either party may bring claims in small-claims court or seek injunctive relief for IP rights.</p>
     <p><strong>15.5 Opt-Out.</strong> Email andrew.armour@activatefitnessapp.com within 30 days of first accepting these Terms with subject "Arbitration Opt-Out."</p>
-
     <h2>16. Governing Law</h2>
     <p>These Terms are governed by Indiana law. Disputes not subject to arbitration will be brought in state or federal courts in Hancock County, Indiana (or the Southern District of Indiana).</p>
-
     <h2>17. Miscellaneous</h2>
     <ul>
       <li><strong>Entire Agreement.</strong> These Terms and the Privacy Policy are the complete agreement.</li>
@@ -2417,10 +2125,8 @@
       <li><strong>Assignment.</strong> We may assign; you may not without consent.</li>
       <li><strong>Force Majeure.</strong> We're not liable for events beyond our control.</li>
     </ul>
-
     <h2>18. Changes to Terms</h2>
     <p>Material changes will be posted in-App and on the Site with a new date and email notice. Continued use constitutes acceptance.</p>
-
     <h2>19. Contact</h2>
     <p><strong>ATA IT Services, LLC</strong> dba Activate Fitness</p>
     <p><strong>Email:</strong> andrew.armour@activatefitnessapp.com<br>
@@ -2429,7 +2135,6 @@
     <p style="margin-top:24px; font-size:13px; color:rgba(255,255,255,0.35);">California residents: Under Cal. Civ. Code § 1789.3, report complaints to the Division of Consumer Services, 1625 N. Market Blvd., Suite N 112, Sacramento, CA 95834, or (800) 952-5210.</p>
   </div>
 </div>
-
 <!-- ════════════════════════════════════════════════ PATENTS PAGE -->
 <div class="legal-page" id="patents-page">
   <div class="legal-page-header">
@@ -2439,9 +2144,7 @@
   <div class="legal-page-content">
     <h1>Patents</h1>
     <p class="last-updated">Virtual Patent Marking · 35 U.S.C. § 287(a)</p>
-
     <p>The Activate Fitness Service is protected by patents owned by <strong>ATA IT Services, LLC</strong>. This page is the authoritative list and serves as constructive notice under 35 U.S.C. § 287(a).</p>
-
     <div class="legal-highlight-box" style="border-color: rgba(255,191,0,0.3); background: rgba(255,191,0,0.04);">
       <p style="margin-bottom:12px;"><strong style="color: var(--brand-gold); font-size: 18px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.5px;">U.S. Patent No. 11,660,504 B2</strong></p>
       <p style="color: var(--brand-gold); margin-bottom: 16px;"><strong>Fitness based control of communication device</strong></p>
@@ -2455,26 +2158,21 @@
         <li><strong>Status:</strong> Active</li>
       </ul>
     </div>
-
     <h2>What This Patent Covers</h2>
     <p>Systems and methods for limiting screen time available on a child device based on physical activity. A parent device specifies activity thresholds and associates them with amounts of screen time; activity data from a wearable sensor (or device-integral sensor) is converted to a screen-time value; available screen time is decremented as it is used; and access to designated functions or apps on the child device is disabled when the available screen-time value reaches zero.</p>
-
     <h2>Links</h2>
     <ul>
       <li><a href="https://patents.google.com/patent/US11660504B2/en" target="_blank" style="color: var(--brand-gold);">View on Google Patents ↗</a></li>
       <li><a href="https://patentcenter.uspto.gov/applications/17540838" target="_blank" style="color: var(--brand-gold);">USPTO Patent Center ↗</a></li>
       <li><a href="https://patentimages.storage.googleapis.com/2a/61/e8/a8db31001a1bbc/US11660504.pdf" target="_blank" style="color: var(--brand-gold);">Download Patent PDF ↗</a></li>
     </ul>
-
     <h2>About This Notice</h2>
     <p>This page is provided under 35 U.S.C. § 287(a). Other patents may be pending. The absence of a patent from this list does not waive any rights of ATA IT Services, LLC.</p>
-
     <h2>Licensing</h2>
     <p>End users receive a perpetual, royalty-free license solely for personal, non-commercial use as authorized by the Terms of Service. No other license is granted.</p>
     <p>For licensing inquiries, contact <a href="mailto:andrew.armour@activatefitnessapp.com" style="color: var(--brand-gold);">andrew.armour@activatefitnessapp.com</a> with subject "Patent Licensing Inquiry."</p>
   </div>
 </div>
-
 <script>
   // ── Scroll animations
   const observer = new IntersectionObserver((entries) => {
@@ -2485,30 +2183,24 @@
       }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-
   document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
-
   // ── Legal page overlay
   function openLegal(type) {
     event.preventDefault();
     document.getElementById(type + '-page').classList.add('active');
     document.body.style.overflow = 'hidden';
   }
-
   function closeLegal() {
     document.querySelectorAll('.legal-page').forEach(p => p.classList.remove('active'));
     document.body.style.overflow = '';
   }
-
   // Escape key closes
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeLegal();
   });
-
   // ── Smooth nav active states
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
-
   const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -2521,7 +2213,6 @@
       }
     });
   }, { threshold: 0.4 });
-
   sections.forEach(s => sectionObserver.observe(s));
 </script>
 </body>

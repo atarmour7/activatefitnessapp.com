@@ -1252,6 +1252,23 @@
     }
     .ring-bonus-grid { padding: 36px; gap: 32px; }
   }
+  /* ─── DEMO VIDEO ─────────────────────────────────── */
+  .demo-video-wrap {
+    max-width: 340px;
+    margin: 56px auto 0;
+    border-radius: 32px;
+    overflow: hidden;
+    background: #000;
+    line-height: 0;
+    border: 2px solid rgba(230,92,20,0.3);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(230,92,20,0.15);
+  }
+  .demo-video-wrap video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 9 / 16;
+  }
   /* ─── MISC ───────────────────────────────────────── */
   .gradient-text {
     background: var(--grad);
@@ -1297,6 +1314,7 @@
     <span class="nav-logo-text">Activate Fitness</span>
   </a>
   <ul class="nav-links">
+    <li><a href="#demo">Watch</a></li>
     <li><a href="#how-it-works">How It Works</a></li>
     <li><a href="#wearables">Wearables</a></li>
     <li><a href="#experience">Who It's For</a></li>
@@ -1403,6 +1421,24 @@
     <div class="apple-badge">⌚ Wearable Support</div>
     <div class="apple-badge">👤 Active Mode for Adults</div>
     <div class="apple-badge">💰 Free to Download</div>
+  </div>
+</section>
+<hr class="divider">
+<!-- ════════════════════════════════════════════════ DEMO VIDEO -->
+<section id="demo" style="background: var(--dark);">
+  <div class="container">
+    <div class="animate-on-scroll" style="text-align:center;">
+      <span class="section-label">See It In Action</span>
+      <h2 class="section-title">Kids Earn Screen Time<br><span class="gradient-text">By Moving</span></h2>
+    </div>
+    <div class="demo-video-wrap animate-on-scroll">
+      <video controls playsinline preload="metadata"
+             poster="/images/activate-fitness-demo-poster.jpg">
+        <source src="/videos/activate-fitness-demo.mp4" type="video/mp4">
+        Your browser doesn't support video.
+        <a href="/videos/activate-fitness-demo.mp4">Download it here</a>.
+      </video>
+    </div>
   </div>
 </section>
 <hr class="divider">

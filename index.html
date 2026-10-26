@@ -1536,8 +1536,8 @@
       </div>
       <div class="feature-card">
         <div class="feature-icon-wrap">📟</div>
-        <h3 class="feature-title">Live Activity Widget</h3>
-        <p class="feature-desc">A Lock Screen widget shows the real-time screen time countdown without unlocking the phone — so kids always know how much time is left at a glance.</p>
+        <h3 class="feature-title">One-Tap Widgets</h3>
+        <p class="feature-desc">Home Screen widgets show the balance, steps and a live countdown — and kids can start 5, 10 or 15 minutes or pause with one tap, without opening the app.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon-wrap">⌚</div>
@@ -1558,7 +1558,18 @@
       <div class="feature-card">
         <div class="feature-icon-wrap">⏸️</div>
         <h3 class="feature-title">Parental Pause</h3>
-        <p class="feature-desc">Need devices down for dinner, homework, or family time? Pause a child's screen time instantly from your dashboard — and release it just as fast. No settings to change, no earned minutes lost.</p>
+        <p class="feature-desc">Need devices down for dinner, homework, or family time? Pause a child's screen time instantly from your dashboard — their apps lock the moment the notification arrives, and every earned minute is saved. Release it just as fast.</p>
+      </div>
+      <!-- ADDED 10/25/26: Quick Play + own-phone step counting -->
+      <div class="feature-card">
+        <div class="feature-icon-wrap">⏱️</div>
+        <h3 class="feature-title">Quick Play Sessions</h3>
+        <p class="feature-desc">Use just part of the bank: start 5, 10, 15 minutes or more, and the rest stays saved for later. Sessions end on their own and lock the apps again.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon-wrap">📍</div>
+        <h3 class="feature-title">Only Their Own Steps</h3>
+        <p class="feature-desc">Steps count only from your child's own phone or chosen wearable — never from another family member's iPhone that shares the same Apple ID.</p>
       </div>
     </div>
   </div>
@@ -1681,7 +1692,7 @@
       </div>
       <div class="faq-item">
         <div class="faq-q">How does step tracking work?</div>
-        <div class="faq-a">We use Apple HealthKit to read your child's daily step count directly from their iPhone's built-in motion sensor. No additional hardware or wearable is needed. The step count syncs throughout the day automatically.</div>
+        <div class="faq-a">With your permission, Activate Fitness reads your child's daily step total from Apple Health — counted by their iPhone's built-in motion sensor or the wearable you choose. Only steps from their own phone or wearable count, even if other family devices share the same Apple ID. With an Apple Watch, exercise minutes and whether the Exercise ring was closed are used for the optional Ring Bonus. No extra hardware is needed.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Can my child bypass the app restrictions?</div>
@@ -1721,11 +1732,24 @@
       </div>
       <div class="faq-item">
         <div class="faq-q">Does Activate Fitness sell data or show ads?</div>
-        <div class="faq-a">Absolutely not. We do not sell any data, run ads, or use behavioral tracking of any kind — especially for children's data. Activate Fitness is funded entirely by the App Store and optional future premium features. Read our <a href="#" onclick="openLegal('privacy')">Privacy Policy</a> for full details.</div>
+        <div class="faq-a">Absolutely not. We do not sell any data, run ads, or use behavioral tracking of any kind — especially for children's data. Activate Fitness is funded entirely by the App Store and optional future premium features. Read our <a href="/privacy/">Privacy Policy</a> for full details.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">How do I add the Home Screen widget?</div>
-        <div class="faq-a">Long press on your Home Screen until the apps start wiggling, tap the "+" button in the top left corner, search for "Activate Fitness", and choose the Medium size. This widget shows your Screen Time balance and step progress at a glance — no need to open the app! The widget tutorial also appears automatically after pairing setup.</div>
+        <div class="faq-a">Long press on your Home Screen until the apps start wiggling, tap "Edit" (or "+") in the top left corner, then "Add Widget", search for "Activate Fitness", and choose the Medium size. The widget shows the Screen Time balance and step progress, and its buttons start 5, 10 or 15 minutes or pause screen time without opening the app. The widget tutorial also appears automatically after pairing.</div>
+      </div>
+      <!-- ADDED 10/25/26: setup + Health access FAQs -->
+      <div class="faq-item">
+        <div class="faq-q">Why does setup ask my child to walk a few steps?</div>
+        <div class="faq-a">Apple never tells an app whether Health access was allowed, so setup checks that Activate Fitness can actually see steps before it continues. On a phone that already has steps, this passes instantly. On a brand-new phone, walking about 30 steps (then opening the Apple Health app once) is enough.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">I tapped "Don't Allow" for Apple Health. How do I fix it?</div>
+        <div class="faq-a">iOS only asks once, so turn it on in the Apple Health app: tap Sharing, then Apps, then Activate Fitness, then Turn On All and Allow. Come back to Activate Fitness and setup continues on its own. Health access is required — without it, steps aren't counted and no screen time can be earned.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Should my child have their own Apple ID?</div>
+        <div class="faq-a">We recommend it. Apple's Family Sharing lets you create a child Apple ID in minutes, which keeps your child's Health data, purchases and Screen Time separate from yours. Activate Fitness also counts only the steps from your child's own phone either way.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">How do I delete the app from my child's device?</div>
@@ -1764,12 +1788,12 @@
       <div class="safety-card">
         <div class="safety-icon">🛡️</div>
         <h3 class="safety-title">COPPA Compliant</h3>
-        <p class="safety-desc">We comply fully with the Children's Online Privacy Protection Act. We obtain verifiable parental consent before collecting any data from children under 13. Parents control everything.</p>
+        <p class="safety-desc">We comply fully with the Children's Online Privacy Protection Act. A parent gives consent for each child from their own account before that child's device can be paired, and we email a confirmation. Parents control everything.</p>
       </div>
       <div class="safety-card">
         <div class="safety-icon">❤️</div>
         <h3 class="safety-title">HealthKit Stays Private</h3>
-        <p class="safety-desc">Raw HealthKit samples never leave your child's device. We sync only a single derived number — the day's step total — so paired devices and your dashboard show the same progress. No workouts, heart rate, or other health records are ever collected.</p>
+        <p class="safety-desc">Raw Apple Health samples never leave your child's device. We sync only daily totals — steps, and with an Apple Watch, exercise minutes and whether the Exercise ring was closed. No workouts, heart rate, sleep or other health records are ever collected.</p>
       </div>
       <div class="safety-card">
         <div class="safety-icon">🚫</div>
@@ -1784,7 +1808,7 @@
       <div class="safety-card">
         <div class="safety-icon">🗑️</div>
         <h3 class="safety-title">Right to Delete</h3>
-        <p class="safety-desc">Parents can delete any child profile from the app at any time. All associated data is permanently removed within 30 days. Full account deletion available on request — no questions asked.</p>
+        <p class="safety-desc">Parents can delete any child profile — or the whole account — in the app at any time, and it's removed from our systems within 30 days. Old records also delete themselves on a schedule, and inactive accounts are removed after notice.</p>
       </div>
       <div class="safety-card">
         <div class="safety-icon">🍎</div>
@@ -1806,24 +1830,24 @@
     <div class="legal-cards animate-on-scroll">
       <div class="legal-card">
         <h3 class="legal-card-title">Privacy Policy</h3>
-        <!-- UPDATED 7/15/26: Date bump + Active Mode highlight (adult self-use rev) -->
-        <p class="legal-card-date">Last Updated: July 15, 2026</p>
-        <p class="legal-card-summary">We collect minimal data, only what's needed to run the app. Raw HealthKit data stays on-device — only daily step totals sync. No advertising. No selling data. Full COPPA compliance.</p>
+        <!-- UPDATED 10/25/26: October 2026 policy -->
+        <p class="legal-card-date">Effective [EFFECTIVE DATE]</p>
+        <p class="legal-card-summary">We collect only what the app needs. Raw Apple Health data stays on the device — only daily totals sync. No advertising. No selling data. COPPA compliant, with a clear retention schedule.</p>
         <div class="legal-highlights">
-          <div class="legal-highlight">We only collect step count — not health records</div>
+          <div class="legal-highlight">Daily step totals (and Apple Watch exercise minutes and ring closures) — never health records</div>
           <div class="legal-highlight">Children's data never sold or shared with advertisers</div>
-          <div class="legal-highlight">Raw HealthKit data never leaves the device — only daily step totals sync</div>
+          <div class="legal-highlight">Old records delete themselves; inactive accounts removed after notice</div>
           <div class="legal-highlight">COPPA & GDPR compliant</div>
           <div class="legal-highlight">Adult self-use (Active Mode) covered — same no-sale, no-ads rules</div>
           <div class="legal-highlight">Full deletion rights — anytime, no questions</div>
           <div class="legal-highlight">App deletion prevented on child devices (parental control)</div>
         </div>
-        <a href="#" class="btn-outline" onclick="openLegal('privacy')">Read Full Privacy Policy</a>
+        <a href="/privacy/" class="btn-outline">Read Full Privacy Policy</a>
       </div>
       <div class="legal-card">
         <h3 class="legal-card-title">Terms of Service</h3>
-        <!-- UPDATED 7/15/26: Date bump + Active Mode highlight (adult self-use rev) -->
-        <p class="legal-card-date">Last Updated: July 15, 2026</p>
+        <!-- UPDATED 10/25/26: October 2026 terms -->
+        <p class="legal-card-date">Effective [EFFECTIVE DATE]</p>
         <p class="legal-card-summary">Plain-language terms covering how the app works, parental responsibilities, limitations of the technology, and what you can expect from us.</p>
         <div class="legal-highlights">
           <div class="legal-highlight">App requires iOS 17+ and parental setup</div>
@@ -1835,7 +1859,14 @@
           <div class="legal-highlight">No warranty on 100% restriction accuracy (iOS limitation)</div>
           <div class="legal-highlight">Governed by Indiana law</div>
         </div>
-        <a href="#" class="btn-outline" onclick="openLegal('terms')">Read Full Terms of Service</a>
+        <a href="/terms/" class="btn-outline">Read Full Terms of Service</a>
+      </div>
+      <!-- ADDED 10/25/26: separate Consumer Health Data Privacy Policy (Washington MHMDA requires its own homepage link) -->
+      <div class="legal-card" style="grid-column: 1 / -1;">
+        <h3 class="legal-card-title">Consumer Health Data Privacy Policy</h3>
+        <p class="legal-card-date">Effective [EFFECTIVE DATE]</p>
+        <p class="legal-card-summary">How we handle step and exercise data under Washington, Nevada and Connecticut consumer health data laws: what we collect, who receives it, and how to access, delete or withdraw consent.</p>
+        <a href="/health-privacy/" class="btn-outline">Read the Health Data Privacy Policy</a>
       </div>
       <div class="legal-card" style="grid-column: 1 / -1;">
         <h3 class="legal-card-title">Patents</h3>
@@ -1846,7 +1877,7 @@
           <div class="legal-highlight">Virtual patent marking under 35 U.S.C. § 287(a)</div>
           <div class="legal-highlight">Active through September 7, 2037</div>
         </div>
-        <a href="#" class="btn-outline" onclick="openLegal('patents')">View Patent Details</a>
+        <a href="/patents/" class="btn-outline">View Patent Details</a>
       </div>
     </div>
   </div>
@@ -1898,7 +1929,7 @@
   <div style="max-width:700px; margin:0 auto;">
     <span class="section-label" style="display:inline-block; margin-bottom:24px;">Free Download</span>
     <h2>Ready to<br><span class="gradient-text">Activate?</span></h2>
-    <p>Free on the App Store. Set up takes less than 10 minutes. Start building healthy screen time habits today — for your family, or just for you.</p>
+    <p>Free on the App Store, with quick, guided setup. Start building healthy screen time habits today — for your family, or just for you.</p>
     <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
       <a href="https://apps.apple.com/app/id6760926366" class="btn-primary" target="_blank" rel="noopener" style="font-size:16px; padding:18px 44px;">
         🍎 Download on the App Store
@@ -1938,10 +1969,11 @@
     <div class="footer-col">
       <div class="footer-col-title">Legal</div>
       <ul>
-        <li><a href="#" onclick="openLegal('privacy')">Privacy Policy</a></li>
-        <li><a href="#" onclick="openLegal('terms')">Terms of Service</a></li>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+        <li><a href="/health-privacy/">Consumer Health Data Privacy Policy</a></li>
+        <li><a href="/terms/">Terms of Service</a></li>
         <li><a href="#privacy-safety">COPPA Compliance</a></li>
-        <li><a href="#" onclick="openLegal('patents')">Patents</a></li>
+        <li><a href="/patents/">Patents</a></li>
       </ul>
     </div>
   </div>
@@ -1950,266 +1982,7 @@
     <p>Made with ❤️ for families</p>
   </div>
 </footer>
-<!-- ════════════════════════════════════════════════ PRIVACY POLICY PAGE -->
-<div class="legal-page" id="privacy-page">
-  <div class="legal-page-header">
-    <button class="legal-page-back" onclick="closeLegal()">← Back</button>
-    <span class="legal-page-title">Privacy Policy</span>
-  </div>
-  <div class="legal-page-content">
-    <h1>Privacy<br>Policy</h1>
-    <!-- UPDATED 7/15/26: Active Mode (adult self-use) revision — new §5A, generalized §3, expanded §1 -->
-    <p class="last-updated">Effective Date: June 9, 2026 · Last Modified: July 15, 2026</p>
-    <div class="legal-highlight-box">
-      <p><strong>For Parents:</strong> Activate Fitness is designed for use by children under parental supervision. We comply with COPPA and do not collect personal information from children under 13 without verifiable parental consent. We do NOT sell data, use tracking, or show ads. <strong>Adults using Active Mode for themselves:</strong> see Section 1 ("Use by adults for themselves") and Section 5A.</p>
-    </div>
-    <h2>1. Introduction</h2>
-    <p>This Privacy Policy describes how <strong>ATA IT Services, LLC</strong>, an Indiana limited liability company doing business as Activate Fitness ("Activate Fitness," "we," "us," or "our"), collects, uses, discloses, and protects information when you and your child use the Activate Fitness mobile application (the "App") and the website at activatefitnessapp.com (the "Site") (collectively, the "Service").</p>
-    <p><strong>Activate Fitness is designed for parents to set up and supervise their children.</strong> The App rewards a child's physical activity (steps and exercise) with screen time on the child's Apple device, using Apple's Screen Time and HealthKit frameworks.</p>
-    <p>Because the App is used by children, we comply with the Children's Online Privacy Protection Act of 1998 ("COPPA"), Apple's Kids Category requirements, and other applicable child-privacy laws. We do NOT sell, rent, share for cross-context behavioral advertising, or otherwise monetize personal information about children or parents.</p> <p><strong>Use by adults for themselves ("Active Mode").</strong> Activate Fitness may also be used by an adult account holder to earn their own screen time through physical activity, without managing a child. Every account is an Admin account; an adult account holder may create a single self profile and switch their device into Active Mode, in which the App tracks the account holder's own activity and enforces the account holder's own screen-time rules. When you use the App for yourself, you are both the account holder and the data subject: the profile, activity, screen-time, and device information described in Section 3 is collected about you rather than about a child, and we process it under the same minimal-collection, no-sale, no-advertising practices described in this Policy. The children's provisions in Section 5 apply only to child profiles you create; Section 5A explains how Active Mode is limited to adults.</p>
-    <h2>2. Who We Are</h2>
-    <ul>
-      <li><strong>Legal entity:</strong> ATA IT Services, LLC (Indiana)</li>
-      <li><strong>Doing business as:</strong> Activate Fitness</li>
-      <li><strong>Founder:</strong> Andrew Armour</li>
-      <li><strong>Email:</strong> andrew.armour@activatefitnessapp.com</li>
-      <li><strong>Phone:</strong> +1 (317) 604-9554</li>
-      <li><strong>Address:</strong> 1869 S Philadelphia Pass, New Palestine, IN 46163</li>
-    </ul>
-    <h2>3. Information We Collect</h2>
-    <h3>A. From Parents (Account Information)</h3>
-    <ul>
-      <li>Email address and password (or Sign In with Apple identifiers)</li>
-      <li>Parental consent records: timestamp, age category, App version, consent method</li>
-      <li>Any information you voluntarily send via support email</li>
-    </ul>
-    <h3>B. About Profiles You Create (Children, or Yourself)</h3>
-    <ul>
-      <!-- UPDATED 7/15/26: Bullets generalized for self profiles; self-profile designation disclosed -->
-      <li>Profile first name (or nickname) and date of birth or age — the child's for a child profile, or your own for a self profile</li>
-      <li>Optional profile photo, stored in Google Cloud Storage</li>
-      <li>A self-profile designation (a flag marking a profile as belonging to the adult account holder rather than to a child)</li>
-      <li>Admin-configured settings: step goals, minutes per goal, daily max, schedules, restricted apps/categories, wearable selection</li>
-    </ul>
-    <h3>C. Health & Activity Data (Apple HealthKit)</h3>
-    <ul>
-      <li>Daily step count from the device or paired wearable</li>
-      <li>Apple Watch exercise minutes (when Apple Watch is selected)</li>
-      <li>Source identifiers used to filter trusted sources and prevent manipulation</li>
-    </ul>
-    <div class="legal-highlight-box">
-      <p><strong>Important:</strong> Raw HealthKit samples are NOT transmitted off the device. We only transmit derived aggregate values (e.g., "today's step total") to our backend so paired devices and the Admin dashboard can display the same number. For a self profile, this data is about you, the account holder. We do not share Health Data with any third party, do not use it for advertising, and do not disclose it to data brokers.</p>
-    </div>
-    <h3>D. Screen Time & App-Usage Data</h3>
-    <ul>
-      <li>FamilyActivitySelection tokens (opaque — cannot be linked to specific apps by us; Apple's framework prevents that)</li>
-      <li>DeviceActivity event counts for enforcing restrictions</li>
-      <li>Screen-time balance, session times, and pause/resume events</li>
-      <li>Wearable exception requests submitted by your child, including an optional short message (e.g., "charging my watch"), shown to you for approval (child profiles only)</li>
-    </ul>
-    <h3>E. Device & Technical Information</h3>
-    <ul>
-      <li>Device identifier for vendor (identifierForVendor) — for pairing only</li>
-      <li>Firebase Cloud Messaging push token — for notifications only</li>
-      <li>App version, OS version, and approximate time zone</li>
-      <li>Paired device name (e.g., "Emma's iPhone") and last-active timestamp — shown in your dashboard so you can manage paired devices</li>
-      <li>Anonymous Firebase Authentication UID for paired child devices; a self profile operates under your own authenticated account</li>
-      <li>Crash reports via Firebase Crashlytics — enabled only after you grant consent during setup; includes device model, OS version, and technical crash details. Used solely to diagnose and fix bugs, never for advertising or profiling</li>
-    </ul>
-    <h3>F. What We Do NOT Collect</h3>
-    <ul>
-      <li>NO precise location, GPS, contacts, browsing history, or social-media data</li>
-      <li>NO persistent advertising identifiers (IDFA)</li>
-      <li>NO third-party analytics SDKs that profile users</li>
-      <li>NO advertising SDKs of any kind</li>
-    </ul>
-    <h2>4. How We Use Information</h2>
-    <p>We use information only to:</p>
-    <ol>
-      <li>Provide the Service — accounts, pairing, step tracking, screen time, restrictions</li>
-      <li>Maintain verifiable parental consent records (COPPA)</li>
-      <li>Send push notifications about progress, earned rewards, and account events</li>
-      <li>Protect against fraud, abuse, and step manipulation</li>
-      <li>Communicate about service issues, security alerts, and support</li>
-      <li>Comply with legal obligations and enforce our Terms of Service</li>
-    </ol>
-    <p>We do NOT use any information for behavioral advertising, profiling, automated decision-making, or sale to third parties.</p>
-    <h2>5. Children's Privacy (COPPA Notice)</h2>
-    <p>In compliance with COPPA:</p>
-    <ul>
-      <li><strong>Direct notice:</strong> We notify parents before collecting any data from children under 13</li>
-      <li><strong>Verifiable consent:</strong> We obtain consent through authenticated account creation, explicit checkbox, and timestamped consent records</li>
-      <li><strong>Minimal collection:</strong> We collect only what's necessary for the App to function</li>
-      <li><strong>No behavioral advertising:</strong> Children's data is never used for advertising</li>
-      <li><strong>Persistent identifiers:</strong> FCM tokens and device identifiers are used solely for internal operations (notifications and device sync)</li>
-    </ul>
-    <h3>Parental Rights Under COPPA</h3>
-    <p>At any time, a parent may:</p>
-    <ul>
-      <li>Review all personal information collected about the child</li>
-      <li>Request deletion of the child's personal information</li>
-      <li>Refuse further collection (may require discontinuing the Service)</li>
-      <li>Revoke consent at any time</li>
-    </ul>
-    <p>Use the in-App deletion control, unpair the child device, or email andrew.armour@activatefitnessapp.com. We respond within 30 days.</p>
-    <!-- ADDED 7/15/26: §5A — COPPA firewall around Active Mode (adults-only) -->
-    <h3>5A. Active Mode Is Adults-Only</h3>
-    <p>Self profiles and Active Mode are available only to adult account holders. The "For Myself" option is age-gated and is not offered to accounts that indicated a non-adult age during setup. A child cannot be enrolled in Active Mode, and a self profile is never treated as a child profile. Creating a self profile does not reduce or alter any COPPA protection that applies to the child profiles on your account, and your self profile's data is not combined with any child's data.</p>
-    <h2>6. Data Sharing</h2>
-    <p>We do NOT sell personal information. We share data only with:</p>
-    <ul>
-      <li><strong>Google LLC / Firebase:</strong> Authentication, Cloud Firestore, Cloud Storage, Cloud Functions, Cloud Messaging, and Crashlytics (crash reporting, enabled only with your consent) — acts as data processor under Google Cloud DPA</li>
-      <li><strong>Apple Inc.:</strong> HealthKit, FamilyControls, DeviceActivity, Push Notifications — governed by Apple's published terms</li>
-      <li><strong>Legal requirements:</strong> If required by law, court order, or to protect rights, property, or safety</li>
-      <li><strong>Business transfers:</strong> In connection with a merger, acquisition, or sale of assets — with prior notice to you</li>
-    </ul>
-    <h2>7. Apple HealthKit Disclosure</h2>
-    <p>We comply with Apple's HealthKit terms:</p>
-    <ul>
-      <li>We will not use HealthKit data for advertising or use-based data mining</li>
-      <li>We will not disclose HealthKit data to third parties without user permission</li>
-      <li>We will not sell HealthKit data to advertising platforms, data brokers, or information resellers</li>
-    </ul>
-    <h3>Widget & Live Activity</h3>
-    <p>The Home Screen widget and Lock Screen Live Activity read from local device storage only — no network requests are made.</p>
-    <h3>App Deletion Prevention</h3>
-    <p>While parental controls are active, iOS prevents the app from being deleted (Apple's denyAppRemoval). Parents can unpair the device (requires PIN) to allow deletion.</p>
-    <h2>8. California Residents — CCPA / CPRA</h2>
-    <p>If you are a California resident, the CCPA grants you the following rights:</p>
-    <ul>
-      <li><strong>Right to know</strong> what personal information we collected, from what sources, for what purposes</li>
-      <li><strong>Right to access</strong> and obtain a portable copy of your personal information</li>
-      <li><strong>Right to delete</strong> your personal information (subject to limited exceptions)</li>
-      <li><strong>Right to correct</strong> inaccurate personal information</li>
-      <li><strong>Right to opt out</strong> of sale and sharing — we do not sell or share</li>
-      <li><strong>Right to non-discrimination</strong> for exercising any of these rights</li>
-    </ul>
-    <p>Email andrew.armour@activatefitnessapp.com with subject "California Privacy Request." We respond within 45 days.</p>
-    <h2>9. Other U.S. State Privacy Rights</h2>
-    <p>Residents of Virginia, Colorado, Connecticut, Utah, Texas, Oregon, Montana, and other states with comprehensive privacy laws have similar rights. We do not engage in sale, targeted advertising, or profiling. Contact us at the email above.</p>
-    <h2>10. International Users (GDPR)</h2>
-    <p>If you are in the EEA, UK, or Switzerland, our legal bases for processing are: performance of a contract, consent, legal obligation, and legitimate interests. You have the right to withdraw consent, lodge complaints with your supervisory authority, and object to processing.</p>
-    <h2>11. Data Retention & Deletion</h2>
-    <ul>
-      <li><strong>Active accounts:</strong> retained while active</li>
-      <!-- UPDATED 7/15/26: Retention bullet covers self profiles -->
-      <li><strong>Child and self profiles:</strong> until the account holder deletes the profile or the account</li>
-      <li><strong>Activity data:</strong> rolling 365-day retention</li>
-      <li><strong>Consent records:</strong> retained while your account is active; deleted when you delete your account</li>
-      <li><strong>Backups:</strong> up to 30 days</li>
-    </ul>
-    <p>We retain each category of information only as long as reasonably necessary for the purposes described in Section 4, and never indefinitely. When you delete your account, we delete all child profiles, activity records, consent records, tokens, photos, and auth records.</p>
-    <h2>12. Security</h2>
-    <p>We use TLS 1.2+ encryption in transit, encryption at rest in Firebase, row-level security rules, and restricted backend access. No system is 100% secure. If we become aware of a breach, we notify affected users and authorities as required by law.</p>
-    <h2>13. Cookies & Tracking</h2>
-    <p>The App does not use cookies. The Site uses only essential cookies. We do not use advertising cookies, analytics that profile users, or cross-site tracking.</p>
-    <h2>14. Changes to This Policy</h2>
-    <p>When we make material changes, we will post the updated Policy with a new date, notify you by email, and — for changes expanding children's data collection — obtain new parental consent as required by COPPA.</p>
-    <h2>15. Contact Us</h2>
-    <p><strong>ATA IT Services, LLC</strong> dba Activate Fitness</p>
-    <p><strong>Email:</strong> andrew.armour@activatefitnessapp.com<br>
-    <strong>Phone:</strong> +1 (317) 604-9554<br>
-    <strong>Address:</strong> 1869 S Philadelphia Pass, New Palestine, IN 46163</p>
-    <p>We respond to all privacy requests within 30 days.</p>
-  </div>
-</div>
-<!-- ════════════════════════════════════════════════ TERMS OF SERVICE PAGE -->
-<div class="legal-page" id="terms-page">
-  <div class="legal-page-header">
-    <button class="legal-page-back" onclick="closeLegal()">← Back</button>
-    <span class="legal-page-title">Terms of Service</span>
-  </div>
-  <div class="legal-page-content">
-    <h1>Terms of<br>Service</h1>
-    <!-- UPDATED 7/15/26: Active Mode (adult self-use) revision — new §7A, updated §2/§4/§8/§9 -->
-    <p class="last-updated">Effective Date: June 9, 2026 · Last Modified: July 15, 2026</p>
-    <div class="legal-highlight-box">
-      <p><strong>Notice:</strong> Section 15 contains a binding individual-arbitration clause and class-action waiver. You may opt out within 30 days of accepting these Terms.</p>
-    </div>
-    <h2>1. Agreement to Terms</h2>
-    <p>These Terms of Service ("Terms") form a binding contract between you and <strong>ATA IT Services, LLC</strong>, an Indiana limited liability company doing business as Activate Fitness ("Activate Fitness," "we," "us," or "our"). By creating an account, downloading the App, or using the Service, you accept these Terms and our Privacy Policy.</p>
-    <h2>2. Who Can Use the Service</h2>
-    <ul>
-      <li>Parents/guardians must be at least 18 years old and have legal authority over each child added</li>
-      <li>Children may only use the Service under direct parental supervision, on devices paired by a parent</li>
-      <li>Children may not create independent accounts</li>
-      <!-- ADDED 7/15/26: Adult self-use eligibility (Active Mode) -->
-      <li>Adults (18 or older) may also use the Service for themselves through a single self profile ("Active Mode"); a self profile may be used only by the account holder — see Section 7A</li>
-    </ul>
-    <h2>3. Account Security</h2>
-    <p>You agree to provide accurate information, keep your password and PIN confidential, notify us immediately of compromise, and prevent the child from learning the PIN or Screen-Time passcode. You are responsible for all account activity.</p>
-    <h2>4. Description of the Service</h2>
-    <!-- UPDATED 7/15/26: Replaced run-on adult self-use sentence with pointer to dedicated §7A -->
-    <p>Activate Fitness rewards children's physical activity with screen time using Apple's HealthKit, FamilyControls, DeviceActivity, and ManagedSettings frameworks. Features include widgets, Live Activities, bonus rewards, wearable support, scheduled restrictions, multi-device pairing, activity history, and push notifications. We reserve the right to add, modify, or remove features. Screen time balance resets to zero at midnight daily — unused minutes do not carry over. Activate Fitness may be used by a parent to manage children, or by an adult account holder to earn their own screen time through a self profile ("Active Mode"). Adult self-use is governed by Section 7A.</p>
-    <h2>5. License Grant</h2>
-    <p>ATA IT Services, LLC grants you a limited, non-exclusive, non-transferable, non-sublicensable, revocable license to use the App for personal, non-commercial family use.</p>
-    <h2>6. Apple Notice</h2>
-    <p>These Terms are between you and Activate Fitness, not Apple Inc. Apple has no obligation to maintain or support the App. Activate Fitness is solely responsible for warranties, product liability, legal compliance, and intellectual property claims. Apple and its subsidiaries are third-party beneficiaries of these Terms.</p>
-    <h2>7. Parental Supervision</h2>
-    <p>The parent is solely responsible for setting appropriate goals and caps, choosing restricted apps, maintaining passcodes, and monitoring the child's activity for safety. <strong>Activate Fitness does not supervise or monitor children.</strong></p>
-    <!-- ADDED 7/15/26: §7A — Adult Self-Use (Active Mode). Numbered 7A to avoid
-         renumbering §8-§19, which would break the §13 survival cross-references. -->
-    <h2>7A. Adult Self-Use (Active Mode)</h2>
-    <p>If you create a self profile and use Active Mode, the following additional terms apply:</p>
-    <ul>
-      <li><strong>Adults only.</strong> You represent that you are at least 18 years old and that your self profile will be used only by you. Each account is limited to one self profile.</li>
-      <li><strong>Voluntary commitment tool.</strong> Active Mode restrictions rely on Apple's individual Screen Time authorization, which you — as the device owner — may revoke at any time in iOS Settings. Active Mode is a voluntary commitment tool, not an unbreakable lock, and we make no warranty that your self-imposed restrictions cannot be removed or bypassed by you.</li>
-      <li><strong>Mode switching.</strong> Switching from Active Mode back to Admin Mode pauses — it does not forfeit — any running screen-time session. Certain restrictions may intentionally remain in effect in Admin Mode to preserve the integrity of the commitment feature.</li>
-      <li><strong>Ending enforcement.</strong> Deleting your self profile, revoking Screen Time authorization, or deleting the App ends enforcement of your self-imposed restrictions.</li>
-      <li><strong>Scope.</strong> Section 7 (Parental Supervision) and the children's privacy provisions do not apply to your self profile. All other Terms — including Sections 8, 9, 14, and 15 — apply in full.</li>
-    </ul>
-    <h2>8. Medical Disclaimer</h2>
-    <div class="legal-highlight-box">
-      <!-- UPDATED 7/15/26: Disclaimer now addresses adult self-users as well -->
-      <p><strong>ACTIVATE FITNESS IS NOT A MEDICAL DEVICE, NOT MEDICAL ADVICE, AND NOT INTENDED TO DIAGNOSE, TREAT, CURE, OR PREVENT ANY DISEASE.</strong> Step counts may be inaccurate. Consult your physician — or your child's physician — before starting any activity program.</p>
-    </div>
-    <h2>9. Acceptable Use</h2>
-    <!-- UPDATED 7/15/26: "bypass parental controls" scoped to child devices (adults may lawfully revoke their own Screen Time authorization per §7A) -->
-    <p>You agree not to: violate any law; bypass parental controls on a child device; circumvent activity verification; submit false step data; reverse engineer the App; use automated access; sell, redistribute, or sublicense the App; impersonate anyone; or overburden our systems. Violations may result in account termination.</p>
-    <h2>10. Intellectual Property & Patent Notice</h2>
-    <p>The Service is owned by ATA IT Services, LLC and protected by U.S. and international intellectual property laws. "Activate Fitness" and its logo are trademarks of ATA IT Services, LLC.</p>
-    <h3>Patent Notice (35 U.S.C. § 287(a))</h3>
-    <p>The Activate Fitness Service is protected by one or more U.S. patents owned by ATA IT Services, LLC:</p>
-    <ul>
-      <li><strong>U.S. Patent No. 11,660,504 B2</strong> — "Fitness based control of communication device" (issued May 30, 2023; inventor Andrew Armour)</li>
-    </ul>
-    <p>Additional patents may be pending. See <a href="#" onclick="openLegal('patents')" style="color: var(--brand-gold);">activatefitnessapp.com/patents</a> for the current list.</p>
-    <h2>11. Third-Party Services</h2>
-    <p>The Service uses Apple iOS, HealthKit, FamilyControls, DeviceActivity, ManagedSettings, APNs, the App Store, and Google Firebase. Your use of those platforms is governed by their own terms. Wearables (Garmin, Whoop, Oura, Fitbit) are independent products.</p>
-    <h2>12. Payments (Reserved)</h2>
-    <p>The Service is currently free. We may offer paid features in the future with at least 30 days' notice. No charges without your explicit consent.</p>
-    <h2>13. Termination</h2>
-    <p>You may terminate by using the in-App deletion control or emailing us. We may suspend or terminate for breach, legal requirement, or discontinuation. Sections 8, 10, 14, 15, and 16 survive termination.</p>
-    <h2>14. Disclaimers & Limitation of Liability</h2>
-    <p><strong>THE SERVICE IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND.</strong> We do not warrant uninterrupted or error-free operation, accurate step counts, or that restrictions cannot be bypassed.</p>
-    <p><strong>TO THE FULLEST EXTENT PERMITTED BY LAW, ATA IT SERVICES, LLC'S TOTAL LIABILITY WILL NOT EXCEED THE GREATER OF $50 OR THE AMOUNT YOU PAID US IN THE 12 MONTHS PRECEDING THE CLAIM.</strong></p>
-    <h2>15. Dispute Resolution — Arbitration & Class-Action Waiver</h2>
-    <p><strong>15.1 Informal Resolution.</strong> Before filing arbitration, contact andrew.armour@activatefitnessapp.com. We will try to resolve the dispute within 60 days.</p>
-    <p><strong>15.2 Binding Arbitration.</strong> Unresolved disputes will be resolved by binding individual arbitration under AAA Consumer Arbitration Rules, in Hancock County, Indiana (or your county, or remotely).</p>
-    <p><strong>15.3 Class-Action Waiver.</strong> YOU AND ATA IT SERVICES, LLC AGREE THAT EACH MAY BRING CLAIMS ONLY ON AN INDIVIDUAL BASIS AND NOT AS A CLASS MEMBER.</p>
-    <p><strong>15.4 Exceptions.</strong> Either party may bring claims in small-claims court or seek injunctive relief for IP rights.</p>
-    <p><strong>15.5 Opt-Out.</strong> Email andrew.armour@activatefitnessapp.com within 30 days of first accepting these Terms with subject "Arbitration Opt-Out."</p>
-    <h2>16. Governing Law</h2>
-    <p>These Terms are governed by Indiana law. Disputes not subject to arbitration will be brought in state or federal courts in Hancock County, Indiana (or the Southern District of Indiana).</p>
-    <h2>17. Miscellaneous</h2>
-    <ul>
-      <li><strong>Entire Agreement.</strong> These Terms and the Privacy Policy are the complete agreement.</li>
-      <li><strong>Severability.</strong> Unenforceable provisions don't affect the rest.</li>
-      <li><strong>No Waiver.</strong> Failure to enforce isn't a waiver.</li>
-      <li><strong>Assignment.</strong> We may assign; you may not without consent.</li>
-      <li><strong>Force Majeure.</strong> We're not liable for events beyond our control.</li>
-    </ul>
-    <h2>18. Changes to Terms</h2>
-    <p>Material changes will be posted in-App and on the Site with a new date and email notice. Continued use constitutes acceptance.</p>
-    <h2>19. Contact</h2>
-    <p><strong>ATA IT Services, LLC</strong> dba Activate Fitness</p>
-    <p><strong>Email:</strong> andrew.armour@activatefitnessapp.com<br>
-    <strong>Phone:</strong> +1 (317) 604-9554<br>
-    <strong>Address:</strong> 1869 S Philadelphia Pass, New Palestine, IN 46163</p>
-    <p style="margin-top:24px; font-size:13px; color:rgba(255,255,255,0.35);">California residents: Under Cal. Civ. Code § 1789.3, report complaints to the Division of Consumer Services, 1625 N. Market Blvd., Suite N 112, Sacramento, CA 95834, or (800) 952-5210.</p>
-  </div>
-</div>
-<!-- ════════════════════════════════════════════════ PATENTS PAGE -->
+<!-- UPDATED 10/25/26: the Privacy Policy, Consumer Health Data Privacy Policy and Terms of Service now live at /privacy/, /health-privacy/ and /terms/. -->
 <div class="legal-page" id="patents-page">
   <div class="legal-page-header">
     <button class="legal-page-back" onclick="closeLegal()">← Back</button>
@@ -2261,6 +2034,9 @@
   // ── Legal page overlay
   function openLegal(type) {
     event.preventDefault();
+    // UPDATED 10/25/26: documents have their own pages now.
+    var pages = { privacy: '/privacy/', terms: '/terms/', health: '/health-privacy/', patents: '/patents/' };
+    if (pages[type]) { window.location.href = pages[type]; return; }
     document.getElementById(type + '-page').classList.add('active');
     document.body.style.overflow = 'hidden';
   }

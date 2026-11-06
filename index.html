@@ -119,6 +119,7 @@
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--white); }
+  .nav-help-mobile { display: none; }
   .nav-cta {
     background: var(--grad);
     color: white !important;
@@ -1204,6 +1205,13 @@
   @media (max-width: 768px) {
     nav { padding: 16px 20px; }
     .nav-links { display: none; }
+    .nav-help-mobile {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--white); text-decoration: none; font-weight: 600; font-size: 14px;
+      letter-spacing: 0.5px; text-transform: uppercase;
+      padding: 8px 14px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.06);
+    }
     .hero h1 { font-size: 54px; }
     .hero-phones { display: none; }
     .steps-grid { grid-template-columns: 1fr; gap: 2px; }
@@ -1323,6 +1331,8 @@
     <li><a href="#legal">Privacy & Terms</a></li>
     <li><a href="https://apps.apple.com/app/id6760926366" class="nav-cta" target="_blank" rel="noopener">Download Free</a></li>
   </ul>
+  <!-- ADDED 11/6/26: phones hide .nav-links, so Help gets its own button there. -->
+  <a href="/help/" class="nav-help-mobile">&#10067; Help</a>
 </nav>
 <!-- ════════════════════════════════════════════════ HERO -->
 <section class="hero" id="home">

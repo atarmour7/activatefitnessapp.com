@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fix a Problem — Activate Fitness Help</title>
+<meta name="description" content="Quick fixes for Activate Fitness: steps not counting, earned time not unlocking, pairing codes, new phones and more.">
+<link rel="canonical" href="https://activatefitnessapp.com/help/troubleshooting/">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="apple-touch-icon" href="/images/logo.png">
+<link rel="icon" href="/images/favicon-ring.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/help/help.css">
+<!-- ADDED 11/6/26 — troubleshooting. Wording mirrors the app's own hints
+     (ChildDashboardView step hints, PairingGuideView conflict step,
+     PairingCodeView 10-minute code, WidgetPromoView). Re-check after each
+     iOS release. Each answer has an id so the app or an email can link to it. -->
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <img src="/images/logo.png" alt="">
+    <a href="/">Activate Fitness</a>
+    <span class="spacer"></span>
+    <a class="back" href="/help/">&larr; Help</a>
+  </header>
+
+  <div class="eyebrow">Troubleshooting</div>
+  <h1>Fix a <span class="gradient-text">problem</span></h1>
+  <p class="lead">Tap a question to see the fix. Most take under a minute.</p>
+  <span class="checked">Last checked: iOS 26.4 &middot; Activate Fitness 2.59 &middot; November 2026</span>
+
+  <h2 class="section">Your child&rsquo;s iPhone</h2>
+
+  <details class="q" id="turned-off">
+    <summary><span class="ic">&#128275;</span><span class="grow">My child turned it off, or their iPhone stopped checking in</span></summary>
+    <div class="a"><p>The usual cause is Face ID on an older iOS, or a Screen Time passcode that isn&rsquo;t locked to you. Follow <a href="/help/check-in/">Lock it down in 5 minutes</a>.</p></div>
+  </details>
+
+  <details class="q" id="steps">
+    <summary><span class="ic">&#128095;</span><span class="grow">Steps aren&rsquo;t counting</span></summary>
+    <div class="a">
+      <ol>
+        <li>On their iPhone, make sure <strong>Fitness Tracking</strong> is on: Settings &rsaquo; Privacy &amp; Security &rsaquo; Motion &amp; Fitness.</li>
+        <li>Make sure Activate Fitness can read Health data: Settings &rsaquo; Privacy &amp; Security &rsaquo; Health &rsaquo; Activate Fitness, and turn everything on.</li>
+        <li>Using a wearable? Open its app (Garmin Connect, Google Health for Fitbit, Whoop, Oura) so it syncs to Apple Health. An Apple Watch should be nearby and synced.</li>
+        <li>Steps only count when the iPhone (or watch) is with them, not left on a charger.</li>
+      </ol>
+    </div>
+  </details>
+
+  <details class="q" id="not-unlocking">
+    <summary><span class="ic">&#9203;</span><span class="grow">They earned time, but an app is still blocked</span></summary>
+    <div class="a">
+      <p>Something else is blocking the same app. iPhone can&rsquo;t tell us when that happens, so check both:</p>
+      <ol>
+        <li>Remove any other parental-control app from their iPhone.</li>
+        <li>In Settings &rsaquo; Screen Time, turn off any <strong>Downtime</strong> or <strong>App Limits</strong> covering the apps they earn.</li>
+      </ol>
+    </div>
+  </details>
+
+  <details class="q" id="notifications">
+    <summary><span class="ic">&#128276;</span><span class="grow">Notifications aren&rsquo;t showing up</span></summary>
+    <div class="a"><p>On the phone that&rsquo;s missing them, open Settings &rsaquo; Notifications &rsaquo; Activate Fitness and turn on <strong>Allow Notifications</strong>. Also check that a Focus mode (like Sleep or Do Not Disturb) isn&rsquo;t hiding them.</p></div>
+  </details>
+
+  <details class="q" id="new-phone">
+    <summary><span class="ic">&#128241;</span><span class="grow">My child has a new iPhone</span></summary>
+    <div class="a">
+      <ol>
+        <li>On your phone, open their profile, tap the old device and unpair it.</li>
+        <li>Tap <strong>Add Device</strong> and pair the new iPhone with the 6-digit code.</li>
+        <li>On the new iPhone, finish the checklist, including <a href="/help/setup/#lock">Lock Screen Time Settings</a>.</li>
+      </ol>
+    </div>
+  </details>
+
+  <details class="q" id="second-device">
+    <summary><span class="ic">&#128187;</span><span class="grow">Adding an iPad or second device</span></summary>
+    <div class="a"><p>Tap <strong>Add Device</strong> again in their profile. Both devices share one balance. Because of an Apple limitation, choose the same apps and categories again on the second device, and lock its Screen Time settings too.</p></div>
+  </details>
+
+  <h2 class="section">Setup and pairing</h2>
+
+  <details class="q" id="code">
+    <summary><span class="ic">&#128290;</span><span class="grow">The pairing code doesn&rsquo;t work</span></summary>
+    <div class="a">
+      <ul>
+        <li>Codes expire after <strong>10 minutes</strong>. Tap <strong>Add Device</strong> again for a fresh one.</li>
+        <li>On the child&rsquo;s iPhone, make sure you tapped <strong>&ldquo;Setting up a child&rsquo;s device?&rdquo;</strong> rather than creating an account.</li>
+        <li>Both phones need an internet connection.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="q" id="face-id">
+    <summary><span class="ic">&#129489;</span><span class="grow">It asks for Face ID or a passcode during setup</span></summary>
+    <div class="a"><p>That&rsquo;s iPhone confirming Screen Time access, and it&rsquo;s expected once. Your child confirms with their Face ID, or you enter their phone passcode.</p></div>
+  </details>
+
+  <details class="q" id="widget">
+    <summary><span class="ic">&#129513;</span><span class="grow">How do I add the widget?</span></summary>
+    <div class="a"><p>Long-press the Home Screen until apps wiggle &rarr; <strong>Edit</strong> (or <strong>+</strong>) &rarr; <strong>Add Widget</strong> &rarr; search &ldquo;Activate Fitness&rdquo; &rarr; choose <strong>Medium</strong>.</p></div>
+  </details>
+
+  <h2 class="section">Your account</h2>
+
+  <details class="q" id="password">
+    <summary><span class="ic">&#128273;</span><span class="grow">I forgot my password</span></summary>
+    <div class="a"><p>On the sign-in screen, tap <strong>Forgot password</strong>. The email link works for 1 hour.</p></div>
+  </details>
+
+  <details class="q" id="delete">
+    <summary><span class="ic">&#128465;&#65039;</span><span class="grow">Delete a profile or my account</span></summary>
+    <div class="a">
+      <ul>
+        <li><strong>A child&rsquo;s profile:</strong> open the profile, tap edit, then <strong>Delete Profile</strong> (Admin PIN required).</li>
+        <li><strong>Your account:</strong> open <strong>My Account</strong>, then <strong>Delete Account</strong>. This removes every profile and its data.</li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="callout purple" style="margin-top:24px">
+    <div class="ic">&#9993;&#65039;</div>
+    <p><strong>Didn&rsquo;t find it?</strong> Email <a href="mailto:andrew.armour@activatefitnessapp.com">andrew.armour@activatefitnessapp.com</a> with which question you tried and what you see. A screenshot helps.</p>
+  </div>
+
+  <footer>
+    &copy; 2026 ATA IT Services, LLC (dba Activate Fitness) &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a>
+  </footer>
+</div>
+</body>
+</html>

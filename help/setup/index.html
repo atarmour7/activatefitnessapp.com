@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Setup Guide — Activate Fitness Help</title>
+<meta name="description" content="Set up Activate Fitness step by step: your phone first, then your child's iPhone. About 10 minutes.">
+<link rel="canonical" href="https://activatefitnessapp.com/help/setup/">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="apple-touch-icon" href="/images/logo.png">
+<link rel="icon" href="/images/favicon-ring.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/help/help.css">
+<!-- ADDED 11/6/26 — setup walkthrough. Wording mirrors the app:
+     PairingGuideView, PairingCodeView, ChildSetupChecklistView (steps 1-7),
+     SelfSetupChecklistView. Step 5 here must match /help/check-in/ and
+     functions/checkInEmail.js. Re-check after each iOS release. -->
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <img src="/images/logo.png" alt="">
+    <a href="/">Activate Fitness</a>
+    <span class="spacer"></span>
+    <a class="back" href="/help/">&larr; Help</a>
+  </header>
+
+  <div class="eyebrow">Setup guide</div>
+  <h1>Set up in <span class="gradient-text">10 minutes</span></h1>
+  <p class="lead">First a few minutes on <strong>your</strong> phone, then the rest on <strong>your child&rsquo;s</strong> iPhone. Follow it in order; every step matters.</p>
+  <span class="checked">Last checked: iOS 26.4 &middot; Activate Fitness 2.59 &middot; November 2026</span>
+
+  <h2 class="section">Before you start<small>Have these ready. It saves most problems later.</small></h2>
+  <ul class="checklist">
+    <li><span class="box"></span><span><strong>Your child&rsquo;s iPhone, updated to iOS 26.4 or later</strong> (Settings &rarr; General &rarr; Software Update). On older iOS, Face ID can switch Activate Fitness off.</span></li>
+    <li><span class="box"></span><span><strong>Your child nearby.</strong> iPhone asks for their Face ID or passcode once during setup.</span></li>
+    <li><span class="box"></span><span><strong>Other parental-control apps removed</strong> from their iPhone, and any Downtime or App Limits in Settings &rarr; Screen Time turned off for the apps you want them to earn. Two systems blocking the same app will conflict.</span></li>
+    <li><span class="box"></span><span><strong>Your own Apple Account password</strong> handy. You&rsquo;ll enter it on their iPhone in step 5.</span></li>
+  </ul>
+
+  <h2 class="section">Part 1 &middot; Your phone</h2>
+
+  <div class="step">
+    <span class="where parent">&#128241; On your phone</span>
+    <div class="step-head"><div class="num">1</div><h3>Create your account</h3></div>
+    <p>Install <strong>Activate Fitness</strong> from the App Store, create your account, and tap the link in the verification email. When asked, set an <strong>Admin PIN</strong>. It protects every setting and is never shared with your child.</p>
+  </div>
+
+  <div class="step">
+    <span class="where parent">&#128241; On your phone</span>
+    <div class="step-head"><div class="num">2</div><h3>Add your child</h3></div>
+    <p>Tap <strong>Add a New Profile &rarr; A Child</strong>, enter their name and age, and give consent.</p>
+  </div>
+
+  <div class="step">
+    <span class="where parent">&#128241; On your phone</span>
+    <div class="step-head"><div class="num">3</div><h3>Get a pairing code</h3></div>
+    <p>In your child&rsquo;s profile, tap <strong>Add Device</strong>. Answer whether they use a wearable, then follow the short guide. You&rsquo;ll get a <strong>6-digit code</strong>. It expires in 10 minutes, so have their iPhone in hand. Tap <strong>Send Link</strong> to text them the App Store link.</p>
+  </div>
+
+  <h2 class="section">Part 2 &middot; Your child&rsquo;s iPhone</h2>
+
+  <div class="step">
+    <span class="where child">&#128241; On your child&rsquo;s iPhone</span>
+    <div class="step-head"><div class="num">4</div><h3>Install and pair</h3></div>
+    <p>Install Activate Fitness, open it, tap <strong>&ldquo;Setting up a child&rsquo;s device?&rdquo;</strong> and enter the 6-digit code. A setup checklist appears. Work through it top to bottom:</p>
+    <ol>
+      <li><strong>Allow Health access.</strong> When the Health screen appears, tap <strong>Turn On All</strong>, then <strong>Allow</strong>. This is how steps are counted.</li>
+      <li><strong>Allow Screen Time access.</strong> Your child confirms with Face ID or their passcode.</li>
+      <li><strong>Allow notifications</strong> so they know when time is running low.</li>
+      <li><strong>Set the activity goal</strong>, e.g. 1,000 steps = 10 minutes.</li>
+      <li><strong>Lock Screen Time Settings</strong>. This is step 5 below, the most important one.</li>
+      <li><strong>Choose app restrictions</strong>: the apps and categories that need earned time.</li>
+    </ol>
+  </div>
+
+  <div class="step" id="lock">
+    <span class="where child">&#128241; On your child&rsquo;s iPhone</span>
+    <div class="step-head"><div class="num">5</div><h3>Lock Screen Time Settings <span class="must">Don&rsquo;t skip</span></h3></div>
+    <p>Without this, your child can turn Activate Fitness off in Settings. Tap <strong>Open Settings</strong> in the checklist, then:</p>
+    <ol>
+      <li>Tap <strong>Screen Time</strong>, scroll to the bottom and tap <strong>Lock Screen Time Settings</strong>.</li>
+      <li>Choose a 4-digit passcode that <strong>only you</strong> know.</li>
+      <li>When asked for an Apple Account for passcode recovery, enter <strong>your</strong> Apple Account, not your child&rsquo;s.</li>
+      <li>Back on the Screen Time screen, turn on <strong>Content &amp; Privacy Restrictions</strong> and leave its other settings as they are.</li>
+      <li>Come back to Activate Fitness to finish.</li>
+    </ol>
+    <div class="ios" aria-hidden="true">
+      <div class="crumb">SETTINGS &rsaquo; SCREEN TIME</div>
+      <div class="row hl"><div class="glyph" style="background:#5e5ce6">&#128274;</div><div class="grow">Lock Screen Time Settings</div><div class="chev">&rsaquo;</div></div>
+      <div class="row hl"><div class="glyph" style="background:#ff3b30">&#128683;</div><div class="grow">Content &amp; Privacy Restrictions</div><div class="toggle"></div></div>
+    </div>
+    <p class="why">Why each part matters: the passcode stops changes to Screen Time; your Apple Account stops your child from using &ldquo;Forgot Passcode&rdquo;; and Content &amp; Privacy Restrictions is what makes the passcode protect Activate Fitness. On its own it doesn&rsquo;t block anything.</p>
+  </div>
+
+  <div class="step">
+    <span class="where parent">&#128241; On your phone</span>
+    <div class="step-head"><div class="num">6</div><h3>Check it&rsquo;s done</h3></div>
+    <p>Your phone shows <strong>&ldquo;All steps completed successfully!&rdquo;</strong> and your child&rsquo;s card appears on your dashboard with <strong>&ldquo;Active recently&rdquo;</strong>. That&rsquo;s it: they now earn screen time by moving.</p>
+  </div>
+
+  <div class="callout green">
+    <div class="ic">&#9989;</div>
+    <p><strong>Quick test:</strong> on your child&rsquo;s iPhone, go to Settings &rarr; Screen Time and try to turn off Content &amp; Privacy Restrictions. It should ask for <strong>your</strong> passcode. If it doesn&rsquo;t, redo step 5.</p>
+  </div>
+
+  <h2 class="section">Extras</h2>
+
+  <div class="step">
+    <div class="step-head"><div class="num">+</div><h3>A second device (iPad)</h3></div>
+    <p>Pair an iPhone first, since it counts steps all day. Then in their profile tap <strong>Add Device</strong> again. Both devices share one screen-time balance. Because of an Apple limitation, choose the same apps and categories again on the second device, and do step 5 on it too.</p>
+  </div>
+
+  <div class="step">
+    <div class="step-head"><div class="num">+</div><h3>Wearables</h3></div>
+    <ul>
+      <li><strong>Apple Watch:</strong> works automatically, and closing the Exercise ring can earn bonus time.</li>
+      <li><strong>Garmin, Whoop, Oura:</strong> in that app, turn on sync to Apple Health.</li>
+      <li><strong>Fitbit:</strong> in the Google Health app, go to profile &rarr; Partner apps &rarr; Apple Health and turn on Steps.</li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <div class="step-head"><div class="num">+</div><h3>The Home Screen widget</h3></div>
+    <p>Long-press the Home Screen until apps wiggle, tap <strong>Edit</strong> (or <strong>+</strong>) &rarr; <strong>Add Widget</strong>, search &ldquo;Activate Fitness&rdquo; and add the <strong>Medium</strong> size. It shows time and steps, and starts or pauses screen time with one tap.</p>
+  </div>
+
+  <h2 class="section" id="yourself">Using it for yourself</h2>
+  <div class="step">
+    <span class="where parent">&#128241; On your phone</span>
+    <div class="step-head"><div class="num">1</div><h3>Add your own profile</h3></div>
+    <p>Tap <strong>Add a New Profile &rarr; For Myself</strong> and follow the checklist: allow Health and Screen Time access, set your goal, and choose the apps you want to earn. The same rule applies to you: 1,000 steps can mean 10 minutes.</p>
+  </div>
+
+  <div class="callout purple">
+    <div class="ic">&#128295;</div>
+    <p><strong>Something not working?</strong> See <a href="/help/troubleshooting/">Fix a problem</a>, or email <a href="mailto:andrew.armour@activatefitnessapp.com">andrew.armour@activatefitnessapp.com</a>.</p>
+  </div>
+
+  <footer>
+    &copy; 2026 ATA IT Services, LLC (dba Activate Fitness) &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a>
+  </footer>
+</div>
+</body>
+</html>

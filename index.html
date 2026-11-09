@@ -119,7 +119,7 @@
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--white); }
-  .nav-help-mobile { display: none; }
+  .nav-help-mobile, .nav-mobile, .nav-menu-btn, .mobile-menu { display: none; }
   .nav-cta {
     background: var(--grad);
     color: white !important;
@@ -1202,9 +1202,41 @@
     line-height: 1.6;
   }
   /* ─── RESPONSIVE ─────────────────────────────────── */
+  @media (max-width: 420px) {
+    .nav-logo-text { font-size: 16px; }
+    .nav-help-mobile { padding: 8px 12px !important; }
+  }
   @media (max-width: 768px) {
     nav { padding: 16px 20px; }
     .nav-links { display: none; }
+    .nav-mobile { display: flex; align-items: center; gap: 10px; flex: none; }
+    .nav-logo-text { white-space: nowrap; }
+    .nav-help-mobile { white-space: nowrap; }
+    .nav-menu-btn {
+      display: inline-flex; flex-direction: column; justify-content: center; gap: 5px;
+      width: 44px; height: 40px; padding: 0 11px; border-radius: 12px; cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.06);
+    }
+    .nav-menu-btn span { display: block; height: 2px; background: #fff; border-radius: 2px; transition: transform .2s, opacity .2s; }
+    .nav-menu-btn[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-menu-btn[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu:not([hidden]) {
+      display: flex; flex-direction: column; position: fixed; z-index: 999;
+      top: 72px; left: 12px; right: 12px; padding: 8px;
+      background: rgba(17,17,17,0.97); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px; box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      max-height: calc(100vh - 90px); overflow-y: auto;
+    }
+    .mobile-menu a {
+      color: #fff; text-decoration: none; font-weight: 600; font-size: 17px;
+      padding: 14px 16px; border-radius: 12px;
+    }
+    .mobile-menu a:active { background: rgba(255,255,255,0.08); }
+    .mobile-menu .mobile-menu-cta {
+      margin-top: 6px; text-align: center; color: #fff;
+      background: linear-gradient(90deg, #E51A0F, #E65C14, #FFBF00);
+    }
     .nav-help-mobile {
       display: inline-flex; align-items: center; gap: 6px;
       color: var(--white); text-decoration: none; font-weight: 600; font-size: 14px;
@@ -1332,8 +1364,26 @@
     <li><a href="https://apps.apple.com/app/id6760926366" class="nav-cta" target="_blank" rel="noopener">Download Free</a></li>
   </ul>
   <!-- ADDED 11/6/26: phones hide .nav-links, so Help gets its own button there. -->
-  <a href="/help/" class="nav-help-mobile">&#10067; Help</a>
+  <!-- UPDATED 11/8/26: plus a ☰ menu with every section, for phones. -->
+  <div class="nav-mobile">
+    <a href="/help/" class="nav-help-mobile">&#10067; Help</a>
+    <button class="nav-menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
+<div class="mobile-menu" id="mobileMenu" hidden>
+  <a href="#demo">Watch</a>
+  <a href="#how-it-works">How It Works</a>
+  <a href="#features">Features</a>
+  <a href="#wearables">Wearables</a>
+  <a href="#experience">Who It's For</a>
+  <a href="#faq">FAQ</a>
+  <a href="/help/">Help Center</a>
+  <a href="#support">Contact Support</a>
+  <a href="#legal">Privacy &amp; Terms</a>
+  <a href="https://apps.apple.com/app/id6760926366" class="mobile-menu-cta" target="_blank" rel="noopener">Download Free</a>
+</div>
 <!-- ════════════════════════════════════════════════ HERO -->
 <section class="hero" id="home">
   <div class="hero-glow"></div>
@@ -2081,6 +2131,18 @@
   </div>
 </div>
 <script>
+  // ── Phone menu (ADDED 11/8/26)
+  function toggleMobileMenu(force) {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.querySelector('.nav-menu-btn');
+    const open = typeof force === 'boolean' ? force : menu.hidden;
+    menu.hidden = !open;
+    btn.setAttribute('aria-expanded', String(open));
+  }
+  document.querySelectorAll('#mobileMenu a').forEach(a => a.addEventListener('click', () => toggleMobileMenu(false)));
+  document.addEventListener('click', e => {
+    if (!e.target.closest('#mobileMenu') && !e.target.closest('.nav-menu-btn')) toggleMobileMenu(false);
+  });
   // ── Scroll animations
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -2089,7 +2151,10 @@
         observer.unobserve(e.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
+  // UPDATED 11/8/26: threshold was 0.1 (10% of the block on screen). On a
+  // phone the FAQ grid is one ~8,000px column, so 10% never fit on screen and
+  // the whole section stayed invisible. Any part on screen now reveals it.
   document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
   // ── Legal page overlay
   function openLegal(type) {
